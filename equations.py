@@ -130,17 +130,3 @@ def food():
     
     total=(organic+meat+foodmiles+package+composting)
     st.title('Your Carbon Footprint is'+" "+str(total)+" "+"Tonnes")
-Footer
-© 2022 GitHub, Inc.
-Footer navigation
-Terms
-Privacy
-Security
-Status
-Docs
-Contact GitHub
-Pricing
-API
-Training
-Blog
-About
