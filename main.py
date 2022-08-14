@@ -30,16 +30,14 @@ def set_background(png_file):
 set_background('background.png')
 
 
-st.title("Carbon Footprint Calculator")
+st.title("Calculo de la huella de carbono industrial")
 option = st.selectbox(
-    'Choose Which type of Carbon Footprint do you wanna calculate',
-    ('Choose an Option', 'Household Carbon Footprint','Public Transport Carbon Footprint','Car Carbon Footprint','Food Carbon Footprint'))
+    'Selecciona el tipo de emisiones de carbono que deseas calcular',
+    ('Selecciona una opcion', 'Combustion fuentes fijas','Combustion fuentes moviles','Electricidad'))
 
-if option=="Household Carbon Footprint":
+if option=="Combustion fuentes fijas":
         equations.household()
-elif option=="Public Transport Carbon Footprint":
+elif option=="Combustion fuentes moviles":
         equations.publictransport()
-elif option=="Car Carbon Footprint":
+elif option=="Electricidad":
         equations.carcarbonfootprint()
-elif option=="Food Carbon Footprint":
-        equations.food()
