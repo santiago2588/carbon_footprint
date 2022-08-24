@@ -21,3 +21,4 @@ fuel_selection=st.multiselect('Fuel',fuels)
 mask_fuels = df['fuel_name'].isin(fuel_selection)
 
 df = df[mask_fuels]
+st.write(df)
