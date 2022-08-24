@@ -30,7 +30,7 @@ df0=[]
 
 for i in fuels:
     fuel_name=st.selectbox("Enter fuel name",fuels,key=i)
-    fuel_consumption=st.number_input("Enter fuel consumption",min_value=1,key=i)
+    fuel_consumption=st.number_input("Enter fuel consumption",min_value=1,key=j)
     df0.append({"Fuel name":fuel_name,"Consumption": fuel_consumption})
 
 fuel_con=pd.DataFrame(df0)
