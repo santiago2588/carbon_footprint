@@ -11,12 +11,10 @@ import pandas as pd
 
 st.title("Calculo de la huella de carbono industrial")
 
-uploaded_file = st.file_uploader("Choose a XLSX file", type="xlsx")
+excel_file='emission factors.xlsx'
 
-if uploaded_file:
-    df = pd.read_excel(uploaded_file, engine = 'openpyxl')
+df=pd.read_excel(excel_file)
 
-    st.dataframe(df)
-    st.table(df)
+fuels=df['fuel_name'].tolist()
 
-
+fuel_selection=st.multiselect('Fuel',fuels)
