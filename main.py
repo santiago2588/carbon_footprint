@@ -42,13 +42,13 @@ st.write(df)
 
 #Obtener listado de consumos
 for i in fuel_list:
-    fuel_consumption=st.number_input(str(i)+" consumption",min_value=1,key=i)
-    df4.append(fuel_consumption)
+    consumption=st.number_input(str(i)+" consumption",min_value=1,key=i)
+    consumption_list.append(consumption)
 
 #fuel_con=pd.DataFrame(df4)
 
 
-fuel_name,scope,co2=emission(fuel_list,df4)
+fuel_name,scope,co2=emission(fuel_list,consumption_list)
 
 df0.append(fuel_name)
 df1.append(co2)
