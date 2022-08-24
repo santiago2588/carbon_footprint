@@ -41,7 +41,7 @@ df.drop(['scope','fuel_type','heat_content','unit_heat_content'],axis=1,inplace=
 st.write(df)
 
 #Obtener listado de consumos
-for i in fuels:
+for i in fuel_list:
     fuel_consumption=st.number_input(str(i)+" consumption",min_value=1,key=i)
     df4.append({"Consumption": fuel_consumption})
 
