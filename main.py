@@ -68,7 +68,7 @@ emissions_total=np.sum(results['CO2 emissions'])
     
 if st.button("Results"):
     st.write(results)
-    st.success(emissions_total)
+    st.success('Total emisiones de CO2',str("%.0f" % np.float_(emissions_total))+ ' CO2eq')
 
  
 if st.button('Reset'):
