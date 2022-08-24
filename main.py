@@ -9,7 +9,7 @@ import streamlit as st
 import numpy as np
 import pandas as pd
 
-#@st.cache(allow_output_mutation=False)
+@st.cache(allow_output_mutation=False)
 def get_data():
     return []
 
@@ -43,10 +43,6 @@ if st.button('Delete'):
     del data
     st.write('mr button has delet for u')
     
-try:
-    st.write(pd.DataFrame(data=data))
-except:
-    pass 
 
 
 
