@@ -29,7 +29,6 @@ st.write(df)
 df0=[]
 
 for i in fuels:
-    #fuel_name=st.selectbox("Enter fuel name",fuels,key=i)
     fuel_consumption=st.number_input(str(i)+" consumption",min_value=1,key=i)
     df0.append({"Consumption": fuel_consumption})
 
