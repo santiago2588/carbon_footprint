@@ -31,11 +31,10 @@ fuel_consumption=st.number_input("Enter fuel consumption",min_value=1)
 
 df0=[]
 
-for fuel in fuel_selection:
-    if st.button("Add row"):
-        df0.append({"Fuel": fuel_selection, "consumption": fuel_consumption})
+if st.button("Add row"):
+    df0.append({"Fuel": fuel_selection, "consumption": fuel_consumption})
     
-    st.write(pd.DataFrame(df0))
+st.write(pd.DataFrame(df0))
 
  
 #if st.button('Delete'):
