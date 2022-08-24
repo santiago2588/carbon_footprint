@@ -32,7 +32,7 @@ set_background('background.png')
 
 uploaded_file = st.file_uploader("Choose a XLSX file", type="xlsx")
 if uploaded_file:
-    df = pd.read_excel('emmission factors')
+    df = pd.read_excel(uploaded_file)
 
     st.dataframe(df)
     st.table(df)
