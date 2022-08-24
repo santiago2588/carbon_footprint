@@ -71,7 +71,7 @@ emissions_scope2=results.loc[results['Emissions Scope']=='2_electricidad','CO2 e
 
 emissions_total=np.sum(results['CO2 emissions'])
 
-st.subheader('3. Presiona el boton Resultados para obtener las emisiones de carbono de tu planta'
+st.subheader('3. Presiona el boton Resultados para obtener las emisiones de carbono de tu planta')
 
 if st.button("Resultados"):
     st.write(results)
