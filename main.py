@@ -45,15 +45,15 @@ for i in fuel_list:
     fuel_consumption=st.number_input(str(i)+" consumption",min_value=1,key=i)
     df4.append({"Consumption": fuel_consumption})
 
-#fuel_con=pd.DataFrame(df0)
+fuel_con=pd.DataFrame(df4)
 
 
-fuel_name,scope,co2=emission(fuel_list,df4)
+fuel_name,scope,co2=emission(fuel_list,fuel_con)
 
 df0.append(fuel_name)
 df1.append(co2)
 df2.append(scope)
-df3.append(fuel_consumption)
+#df3.append(fuel_consumption)
 
 fuel_name=pd.DataFrame(df0).transpose().reset_index(drop=True)
 fuel_name.columns=['Name']
