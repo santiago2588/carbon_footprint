@@ -17,8 +17,6 @@ df=pd.read_csv('emission factors.csv')
 fuels=df['fuel_name']
 
 fuels=st.multiselect('Fuel',fuels)
-fuels_list=pd.DataFrame(fuels).transpose()
-
 
 # Mask to filter dataframe
 mask_fuels = df['fuel_name'].isin(fuels)
@@ -31,11 +29,11 @@ df0=[]
 
 
 #fuel_selection=st.selectbox('Fuel',fuels)
-for i in fuels_list:
+for i in fuels:
     fuel_consumption=st.number_input("Enter fuel consumption",min_value=1,key=i)
 
 if st.button("Add row"):
-    df0.append({"Fuel": fuels_list, "consumption": fuel_consumption})
+    df0.append({"Fuel": fuels, "consumption": fuel_consumption})
     st.write(pd.DataFrame(df0))
 
  
