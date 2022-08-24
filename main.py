@@ -37,7 +37,7 @@ fuel_list=st.multiselect('Fuel',fuels)
 # Filtrar dataframe 
 mask_fuels = df['fuel_name'].isin(fuel_list)
 df = df[mask_fuels]
-df.drop(['scope','fuel_type','heat_content','unit_heat_content'],axis=1,inplace=True)
+#df.drop(['scope','fuel_type','heat_content','unit_heat_content'],axis=1,inplace=True)
 st.write(df)
 
 #Obtener listado de consumos
