@@ -37,7 +37,7 @@ for i in fuels:
 
 fuel_con=pd.Dataframe(df0)
 
-results=pd.concat([fuel_names,fuel_con],axis='columns'
+results=pd.concat([fuel_names,fuel_con],axis='columns')
     
 if st.button("Add row"):
     st.write(results)
