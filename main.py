@@ -17,7 +17,7 @@ df=pd.read_csv('emission factors.csv')
 fuels=df['fuel_name']
 
 fuels=st.multiselect('Fuel',fuels)
-fuels_list=pd.DataFrame(fuels,columns=['Fuels'])
+fuels_list=pd.DataFrame(fuels).transpose()
 
 
 # Mask to filter dataframe
