@@ -83,8 +83,17 @@ if st.button("Results"):
         st.metric('Emisiones Alcance 2',str("%.1f" % np.float_(emissions_scope2))+' CO2-eq')
 
  
-if st.button('Reset'):
-    del results
+#if st.button('Reset'):
+    #del results
 
+placeholder = st.empty()
 
+with placeholder.container():
+    st.title("Try")
+    btn = st.button("try")
+
+#If btn is pressed or True
+if btn:
+    #This would empty everything inside the container
+    placeholder.empty()
 
