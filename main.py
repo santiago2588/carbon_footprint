@@ -89,9 +89,11 @@ if st.button("Resultados"):
         st.metric('Emisiones Alcance 2',str("%.1f" % np.float_(emissions_scope2))+' CO2-eq')
         
         
+st.subheader("4. Presiona el boton Beneficios para descubrir como podemos ayudarte a conseguir mas beneficios con nuestro producto")
+        
 if st.button('Beneficios'): 
-        st.success("Felicitaciones, has comenzado a desbloquear algunos de los beneficios de la digitalización y el procesamiento de datos con modelos cientificos e inteligencia artificial.") 
-        st.markdown("En esta ocasion, te hemos presentado los beneficios del modulo de Calculos. Sin embargo, quedan inmensas oportunidades para optimizar la productividad y el desempeño de los pozos petroleros al integrar todos los modulos de ASTRO") 
+        st.success("Felicitaciones, has comenzado a desbloquear algunos de los beneficios de la digitalización para el calculo de la huella de carbono en tu empresa.") 
+        st.markdown("En esta ocasion, te hemos presentado los beneficios del modulo de Calculos. Sin embargo, quedan inmensas oportunidades para disminuir tu huella de carbono al integrar todos los modulos de ASTRO") 
         st.markdown("Si estás listo para emprender este camino y llevar la digitalización al siguiente nivel, contactate con nosotros para guiarte en el proceso y recibir asesoria de nuestros expertos para optimizar tus operaciones.")
     
         contact_form = """
