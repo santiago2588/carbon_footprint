@@ -40,7 +40,7 @@ if st.button("Results"):
     st.write(results)
 
  
-if st.button('Results'):
+if st.button('Reset'):
     del results
     del fuels
     
