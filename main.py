@@ -31,14 +31,18 @@ df2=[]
 df3=[]
 consumption_list=[]
 
+st.subheader('1. Selecciona las fuentes de energia que utilizas en tu planta')
+
 #Obtener listado de combustibles
 fuels=df['fuel_name']
-fuel_list=st.multiselect('Fuel',fuels)
+fuel_list=st.multiselect('Fuentes de energia',fuels)
 
 # Filtrar dataframe 
 mask_fuels = df['fuel_name'].isin(fuel_list)
 df = df[mask_fuels]
 st.write(df)
+
+st.subheader('2. Ingresa los consumos de las fuentes de energia que seleccionaste, en las unidades correspondientes que se muestran en la tabla anterior')
 
 #Obtener listado de consumos
 for i in fuel_list:
