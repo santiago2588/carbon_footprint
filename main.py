@@ -41,8 +41,7 @@ if st.button("Results"):
 
  
 if st.button('Reset'):
-    del results
-    del fuels
+    del results, fuels
     
 
 
