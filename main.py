@@ -6,8 +6,8 @@ Created on Sun Aug 14 18:19:54 2022
 """
 
 import streamlit as st
-import equations
 import base64
+import numpy as np
 
 st.title(' ')
 def get_base64(bin_file):
@@ -29,15 +29,12 @@ def set_background(png_file):
 
 set_background('background.png')
 
+folder_path = "C:/Users/saint/Dropbox (The University of Manchester)/Emprendimiento/Carbon emission calculator/Demo Streamlit/"
+data_emission = pd.read_excel(folder_path + "emission factors.xlsx")
+
 
 st.title("Calculo de la huella de carbono industrial")
-option = st.selectbox(
-    'Selecciona el tipo de emisiones de carbono que deseas calcular',
-    ('Selecciona una opcion', 'Combustion fuentes fijas','Combustion fuentes moviles','Electricidad'))
 
-if option=="Combustion fuentes fijas":
-        equations.household()
-elif option=="Combustion fuentes moviles":
-        equations.publictransport()
-elif option=="Electricidad":
-        equations.carcarbonfootprint()
+st.multiselect('Seleccione los combustibles',data_emission)
+
+
