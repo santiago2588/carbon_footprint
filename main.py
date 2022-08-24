@@ -28,7 +28,7 @@ df0=[]
 df1=[]
 df2=[]
 df3=[]
-df4=[]
+consumption_list=[]
 
 #Obtener listado de combustibles
 fuels=df['fuel_name']
