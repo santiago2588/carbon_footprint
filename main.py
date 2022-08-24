@@ -60,9 +60,9 @@ scope.columns=['Emissions Scope']
 
 results=pd.concat([fuel_name,co2,scope],axis='columns')
 
-emissions_scope1=results.loc[results['Emissions Scope']==1,'CO2 emissions'].sum()
-emissions_scope2=results.loc[results['Emissions Scope']==2,'CO2 emissions'].sum()
-emissions_scope3=results.loc[results['Emissions Scope']==3,'CO2 emissions'].sum()
+emissions_scope1_fija=results.loc[results['Emissions Scope']==1,'CO2 emissions'].sum()
+emissions_scope1_movil=results.loc[results['Emissions Scope']==2,'CO2 emissions'].sum()
+emissions_scope2=results.loc[results['Emissions Scope']==3,'CO2 emissions'].sum()
 
 emissions_total=np.sum(results['CO2 emissions'])
     
@@ -73,13 +73,13 @@ if st.button("Results"):
     col1,col2,col3=st.columns(3)
         
     with col1:
-        st.metric('Emisiones Alcance 1',str("%.1f" % np.float_(emissions_scope1))+' CO2-eq')
+        st.metric('Emisiones Alcance 1-Combustion fija',str("%.1f" % np.float_(emissions_scope1_fija))+' CO2-eq')
             
     with col2:
-        st.metric('Emisiones Alcance 2',str("%.1f" % np.float_(emissions_scope2))+' CO2-eq')
+        st.metric('Emisiones Alcance 1-Combustion movil',str("%.1f" % np.float_(emissions_scope1_movil))+' CO2-eq')
             
     with col3:
-        st.metric('Emisiones Alcance 3',str("%.1f" % np.float_(emissions_scope3))+' CO2-eq')
+        st.metric('Emisiones Alcance 2',str("%.1f" % np.float_(emissions_scope2))+' CO2-eq')
 
  
 if st.button('Reset'):
