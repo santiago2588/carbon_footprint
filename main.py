@@ -9,7 +9,7 @@ import streamlit as st
 import numpy as np
 import pandas as pd
 
-@st.cache(allow_output_mutation=True)
+#@st.cache(allow_output_mutation=True)
 def get_data():
     return []
 
@@ -37,8 +37,6 @@ if st.button("Add row"):
     
 st.write(pd.DataFrame(get_data()))
 
-if st.button("Delete"):
-    get_data.delete()
  
   
 
