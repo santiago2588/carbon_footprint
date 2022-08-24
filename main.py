@@ -37,7 +37,6 @@ fuel_list=st.multiselect('Fuel',fuels)
 # Filtrar dataframe 
 mask_fuels = df['fuel_name'].isin(fuel_list)
 df = df[mask_fuels]
-#df.drop(['scope','fuel_type','heat_content','unit_heat_content'],axis=1,inplace=True)
 st.write(df)
 
 #Obtener listado de consumos
@@ -45,15 +44,12 @@ for i in fuel_list:
     consumption=st.number_input(str(i)+" consumption",min_value=1,key=i)
     consumption_list.append(consumption)
 
-#fuel_con=pd.DataFrame(df4)
-
-
+#Prueba de la funcion
 fuel_name,scope,co2=emission(fuel_list,consumption_list)
 
 df0.append(fuel_name)
 df1.append(co2)
 df2.append(scope)
-#df3.append(fuel_consumption)
 
 fuel_name=pd.DataFrame(df0).transpose().reset_index(drop=True)
 fuel_name.columns=['Name']
@@ -69,19 +65,14 @@ emissions_scope2=results.loc[results['Emissions Scope']==2,'CO2 emissions'].sum(
 emissions_scope3=results.loc[results['Emissions Scope']==3,'CO2 emissions'].sum()
 
 emissions_total=np.sum(results['CO2 emissions'])
-
-
-
-
-#results=pd.concat([fuel_names,fuel_con],axis='columns')
-
     
 if st.button("Results"):
     st.write(results)
+    st.success(emissions_total)
 
  
 if st.button('Reset'):
-    del results
+    del results, emissions_total
     
 
 
