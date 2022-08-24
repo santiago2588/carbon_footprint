@@ -9,7 +9,6 @@ import streamlit as st
 import base64
 import numpy as np
 import pandas as pd
-import openpyxl
 
 st.title(' ')
 def get_base64(bin_file):
@@ -31,11 +30,16 @@ def set_background(png_file):
 
 set_background('background.png')
 
-data_emission = pd.read_excel("emission factors.xlsx")
-data=st.dataframe(data_emission)
+uploaded_file = st.file_uploader("Choose a XLSX file", type="xlsx")
+if uploaded_file:
+    df = pd.read_excel('emmission factors')
+
+    st.dataframe(df)
+    st.table(df)
+
 
 st.title("Calculo de la huella de carbono industrial")
 
-st.multiselect('Seleccione los combustibles',data)
+#st.multiselect('Seleccione los combustibles',data)
 
 
