@@ -15,7 +15,7 @@ df=pd.read_csv('emission factors.csv')
 
 fuels=df['fuel_name']
 
-fuel_selection=st.select('Fuel',fuels)
+fuel_selection=st.multiselect('Fuel',fuels)
 
 # Mask to filter dataframe
 mask_fuels = df['fuel_name'].isin(fuel_selection)
