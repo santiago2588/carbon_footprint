@@ -29,8 +29,7 @@ def set_background(png_file):
 
 set_background('background.png')
 
-folder_path = "C:/Users/saint/Dropbox (The University of Manchester)/Emprendimiento/Carbon emission calculator/Demo Streamlit/"
-data_emission = pd.read_excel(folder_path + "emission factors.xlsx")
+data_emission = pd.read_excel("emission factors.xlsx")
 
 
 st.title("Calculo de la huella de carbono industrial")
