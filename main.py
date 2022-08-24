@@ -29,20 +29,20 @@ st.write(df)
 df0=[]
 
 for i in fuels:
-    fuel_name=st.selectbox("Enter fuel name",fuels,key=x)
-    fuel_consumption=st.number_input("Enter fuel consumption",min_value=1,key=y)
+    #fuel_name=st.selectbox("Enter fuel name",fuels,key=i)
+    fuel_consumption=st.number_input("Enter fuel consumption",min_value=1,key=i)
     df0.append({"Fuel name":fuel_name,"Consumption": fuel_consumption})
 
 fuel_con=pd.DataFrame(df0)
 
-#results=pd.concat([fuel_names,fuel_con],axis='columns')
+results=pd.concat([fuel_names,fuel_con],axis='columns')
     
 if st.button("Add row"):
-    st.write(fuel_con)
+    st.write(results)
 
  
 if st.button('Delete'):
-    del fuel_con
+    del results
     
 
 
