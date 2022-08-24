@@ -9,7 +9,7 @@ import streamlit as st
 import numpy as np
 import pandas as pd
 
-@st.cache(allow_output_mutation=True)
+#@st.cache(allow_output_mutation=True)
 def get_data():
     return []
 
