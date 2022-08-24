@@ -8,6 +8,7 @@ Created on Sun Aug 14 18:19:54 2022
 import streamlit as st
 import base64
 import numpy as np
+import pandas as pd
 
 st.title(' ')
 def get_base64(bin_file):
