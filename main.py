@@ -30,7 +30,7 @@ df0=[]
 
 #fuel_selection=st.selectbox('Fuel',fuels)
 for i in fuels:
-    fuel_consumption=st.number_input("Enter fuel consumption",min_value=1,key=i)
+    fuel_consumption=st.number_input("Enter fuel consumption",min_value=1)
 
 if st.button("Add row"):
     df0.append({"Fuel": fuels, "consumption": fuel_consumption})
