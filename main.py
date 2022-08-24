@@ -19,6 +19,16 @@ df=pd.read_csv('emission factors.csv')
 
 fuels=df['fuel_name']
 
+fuels=st.multiselect('Fuel',fuels)
+
+# Mask to filter dataframe
+mask_fuels = df['fuel_name'].isin(fuels)
+
+df = df[mask_fuels]
+df.drop(['heat_content','unit_heat_content'],axis=1,inplace=True)
+st.write(df)
+
+
 fuel_selection=st.selectbox('Fuel',fuels)
 fuel_consumption=st.number_input("Enter fuel consumption",min_value=1)
 
@@ -28,12 +38,6 @@ if st.button("Add row"):
 st.write(pd.DataFrame(get_data()))
  
   
-# Mask to filter dataframe
-mask_fuels = df['fuel_name'].isin(fuel_selection)
 
-df = df[mask_fuels]
-df.drop(['heat_content','unit_heat_content'],axis=1,inplace=True)
-df.concat(fuel_consumption,axis=1)
-st.write(df)
 
 
