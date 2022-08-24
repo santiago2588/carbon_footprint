@@ -17,6 +17,9 @@ fuels=df['fuel_name']
 
 fuel_selection=st.multiselect('Fuel',fuels)
 
+for fuel in fuel_selection:
+  fuel_consumption=st.number_input("Enter fuel consumption",min_value=1,key=fuel)
+
 # Mask to filter dataframe
 mask_fuels = df['fuel_name'].isin(fuel_selection)
 
@@ -24,5 +27,4 @@ df = df[mask_fuels]
 df.drop(['heat_content','unit_heat_content'],axis=1,inplace=True)
 st.write(df)
 
-for fuel in fuel_selection:
-  fuel_consumption=st.number_input("Enter fuel consumption",min_value=1,key=fuel)
+
