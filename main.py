@@ -18,7 +18,6 @@ fuels=df['fuel_name']
 
 fuels=st.multiselect('Fuel',fuels)
 fuel_names=pd.DataFrame(fuels)
-st.write(fuel_names)
 
 # Mask to filter dataframe
 mask_fuels = df['fuel_name'].isin(fuels)
@@ -29,8 +28,6 @@ st.write(df)
 
 df0=[]
 
-
-#fuel_selection=st.selectbox('Fuel',fuels)
 for i in fuels:
     fuel_consumption=st.number_input("Enter fuel consumption",min_value=1,key=i)
     df0.append({"Consumption": fuel_consumption})
