@@ -41,7 +41,7 @@ if st.button("Results"):
 
  
 if st.button('Reset'):
-    del results,df
+    del results
     
 
 
