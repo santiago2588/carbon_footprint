@@ -8,7 +8,6 @@ Created on Sun Aug 14 18:19:54 2022
 import streamlit as st
 import numpy as np
 import pandas as pd
-import pyautogui
 
 
 st.title("Calculo de la huella de carbono industrial")
@@ -42,7 +41,7 @@ if st.button("Results"):
 
  
 if st.button('Reset'):
-    pyautogui.hotkey("ctrl","F5")
+    del results
     
 
 
