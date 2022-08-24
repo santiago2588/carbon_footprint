@@ -70,8 +70,10 @@ emissions_scope1_movil=results.loc[results['Emissions Scope']=='1_combustion_mov
 emissions_scope2=results.loc[results['Emissions Scope']=='2_electricidad','CO2 emissions'].sum()
 
 emissions_total=np.sum(results['CO2 emissions'])
-    
-if st.button("Results"):
+
+st.subheader('3. Presiona el boton Resultados para obtener las emisiones de carbono de tu planta'
+
+if st.button("Resultados"):
     st.write(results)
     st.metric('Total emisiones',str("%.1f" % np.float_(emissions_total))+ ' CO2-eq')
     
