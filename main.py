@@ -37,9 +37,8 @@ if st.button("Add row"):
 st.write(pd.DataFrame(df0))
 
  
-#if st.button('Delete'):
-    #del data
-    #st.write('mr button has delet for u')
+if st.button('Delete'):
+    del df0
     
 
 
