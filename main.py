@@ -11,9 +11,7 @@ import pandas as pd
 
 st.title("Calculo de la huella de carbono industrial")
 
-excel_file='emission factors.xlsx'
-
-df=pd.read_excel(excel_file)
+df=pd.read_csv('emission factors.csv')
 
 fuels=df['fuel_name'].tolist()
 
