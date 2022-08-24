@@ -38,7 +38,14 @@ if st.button("Add row"):
 st.write(pd.DataFrame(get_data()))
 
  
-  
+if st.button('Delete'):
+    del get_data
+    st.write('mr button has delet for u')
+    
+try:
+    st.write(pd.DataFrame(data=get_data))
+except:
+    pass 
 
 
 
