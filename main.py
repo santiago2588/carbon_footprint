@@ -10,7 +10,7 @@ import numpy as np
 import pandas as pd
 
 
-@st.cache(allow_output_mutation=True)
+@st.cache
 
 st.title("Calculo de la huella de carbono industrial")
 
