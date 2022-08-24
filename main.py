@@ -24,9 +24,7 @@ mask_fuels = df['fuel_name'].isin(fuels)
 
 df = df[mask_fuels]
 df.drop(['scope','fuel_type','heat_content','unit_heat_content'],axis=1,inplace=True)
-
-if st.button('Factores de emision'):
-    st.write(df)
+st.write(df)
 
 df0=[]
 
