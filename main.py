@@ -23,8 +23,9 @@ for fuel in fuel_selection:
 # Mask to filter dataframe
 mask_fuels = df['fuel_name'].isin(fuel_selection)
 
-df = df[mask_fuels].concat(fuel_consumption,axis=1)
+df = df[mask_fuels]
 df.drop(['heat_content','unit_heat_content'],axis=1,inplace=True)
+df.concat(fuel_consumption,axis=1)
 st.write(df)
 
 
