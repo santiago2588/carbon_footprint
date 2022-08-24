@@ -8,7 +8,6 @@ Created on Sun Aug 14 18:19:54 2022
 import streamlit as st
 import numpy as np
 import pandas as pd
-import pyautogui
 
 st.set_page_config(layout="wide")
 
