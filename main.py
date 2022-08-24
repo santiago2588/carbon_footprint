@@ -35,8 +35,10 @@ for i in fuels:
     fuel_consumption=st.number_input("Enter fuel consumption",min_value=1,key=i)
     df0.append({"Consumption": fuel_consumption})
 
+fuel_con=pd.Dataframe(df0)
+    
 if st.button("Add row"):
-    st.write(pd.DataFrame(df0))
+    st.write(pd.concat([fuel_names,fuel_con],axis='columns')
 
  
 if st.button('Delete'):
