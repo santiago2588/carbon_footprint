@@ -38,7 +38,8 @@ fuel_list=st.multiselect('Fuel',fuels)
 # Filtrar dataframe 
 mask_fuels = df['fuel_name'].isin(fuel_list)
 df = df[mask_fuels]
-st.write(df)
+df_fuels=df.drop(['heat_content'])
+st.write(df_fuels)
 
 #Obtener listado de consumos
 for i in fuel_list:
