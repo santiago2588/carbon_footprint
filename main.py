@@ -35,7 +35,7 @@ st.subheader('1. Selecciona las fuentes de energia que utilizas en tu planta')
 
 #Obtener listado de combustibles
 fuels=df['fuel_name']
-fuel_list=st.multiselect('',fuels)
+fuel_list=st.multiselect('Fuentes de energia',fuels)
 
 # Filtrar dataframe 
 mask_fuels = df['fuel_name'].isin(fuel_list)
