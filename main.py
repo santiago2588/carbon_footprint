@@ -10,6 +10,8 @@ import numpy as np
 import pandas as pd
 
 
+@st.cache(allow_output_mutation=True)
+
 st.title("Calculo de la huella de carbono industrial")
 
 df=pd.read_csv('emission factors.csv')
