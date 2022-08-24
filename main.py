@@ -36,13 +36,15 @@ for i in fuels:
     df0.append({"Consumption": fuel_consumption})
 
 fuel_con=pd.Dataframe(df0)
+
+results=pd.concat([fuel_names,fuel_con],axis='columns'
     
 if st.button("Add row"):
-    st.write(pd.concat([fuel_names,fuel_con],axis='columns')
+    st.write(results)
 
  
 if st.button('Delete'):
-    del df0
+    del results
     
 
 
