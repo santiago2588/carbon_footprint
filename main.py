@@ -34,7 +34,7 @@ df0=[]
 if st.button("Add row"):
     df0.append({"Fuel": fuel_selection, "consumption": fuel_consumption})
     
-st.write(pd.DataFrame(df0()))
+st.write(pd.DataFrame(df0))
 
  
 #if st.button('Delete'):
