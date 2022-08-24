@@ -72,14 +72,14 @@ if st.button("Results"):
     
     col1,col2,col3=st.columns(3)
         
-        with col1:
-            st.metric('Emisiones Alcance 1',str("%.0f" % np.float_(emissions_scope1))+' CO2-eq')
+    with col1:
+        st.metric('Emisiones Alcance 1',str("%.0f" % np.float_(emissions_scope1))+' CO2-eq')
             
-        with col2:
-            st.metric('Emisiones Alcance 2',str("%.0f" % np.float_(emissions_scope2))+' CO2-eq')
+    with col2:
+        st.metric('Emisiones Alcance 2',str("%.0f" % np.float_(emissions_scope2))+' CO2-eq')
             
-        with col3:
-            st.metric('Emisiones Alcance 3',str("%.0f" % np.float_(emissions_scope3))+' CO2-eq')
+    with col3:
+        st.metric('Emisiones Alcance 3',str("%.0f" % np.float_(emissions_scope3))+' CO2-eq')
 
  
 if st.button('Reset'):
