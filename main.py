@@ -25,16 +25,15 @@ df = df[mask_fuels]
 df.drop(['heat_content','unit_heat_content'],axis=1,inplace=True)
 st.write(df)
 
-
-#fuel_selection=st.selectbox('Fuel',fuels)
-for fuel in mask_fuels:
-    fuel_consumption=st.number_input("Enter fuel consumption",min_value=1)
-
 df0=[]
 
-if st.button("Add row"):
+
+#fuel_selection=st.selectbox('Fuel',fuels)
+for fuel in fuels:
+    fuel_consumption=st.number_input("Enter fuel consumption",min_value=1)
+    if st.button("Add row"):
     #df0.append({"Fuel": fuel_selection, "consumption": fuel_consumption})
-    df0.append({"Fuel": fuel, "consumption": fuel_consumption})
+        df0.append({"Fuel": fuel, "consumption": fuel_consumption})
     
 st.write(pd.DataFrame(df0))
 
