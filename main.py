@@ -34,8 +34,8 @@ fuel_consumption=st.number_input("Enter fuel consumption",min_value=1)
 
 if st.button("Add row"):
     get_data().append({"Fuel": fuel_selection, "consumption": fuel_consumption})
-    data=pd.DataFrame(get_data)
-        
+
+data=pd.DataFrame(get_data)      
 st.write(data)
 
  
