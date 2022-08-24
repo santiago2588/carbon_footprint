@@ -35,7 +35,7 @@ for i in fuels:
     fuel_consumption=st.number_input("Enter fuel consumption",min_value=1,key=i)
     df0.append({"Consumption": fuel_consumption})
 
-fuel_con=pd.Dataframe(df0)
+fuel_con=pd.DataFrame(df0)
 
 results=pd.concat([fuel_names,fuel_con],axis='columns')
     
