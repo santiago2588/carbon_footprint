@@ -13,6 +13,6 @@ st.title("Calculo de la huella de carbono industrial")
 
 df=pd.read_csv('emission factors.csv')
 
-fuels=df['fuel_name'].tolist()
+fuels=df['fuel_name']
 
 fuel_selection=st.multiselect('Fuel',fuels)
