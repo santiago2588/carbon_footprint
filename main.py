@@ -14,7 +14,7 @@ st.title("Calculo de la huella de carbono industrial")
 uploaded_file = st.file_uploader("Choose a XLSX file", type="xlsx")
 
 if uploaded_file:
-    df = pd.read_excel(uploaded_file)
+    df = pd.read_excel(uploaded_file, engine = 'openpyxl')
 
     st.dataframe(df)
     st.table(df)
