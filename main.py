@@ -25,4 +25,4 @@ df.drop(['heat_content','unit_heat_content'],axis=1,inplace=True)
 st.write(df)
 
 for fuel in fuel_selection:
-  fuel_consumption=st.number_input("Enter fuel consumption",min_value=1,key=a)
+  fuel_consumption=st.number_input("Enter fuel consumption",min_value=1,key=df['fuel_name'])
