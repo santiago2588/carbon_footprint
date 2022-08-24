@@ -17,6 +17,8 @@ fuels=df['fuel_name']
 
 fuel_selection=st.multiselect('Fuel',fuels)
 
+st.write(fuel_selection)
+
 # Mask to filter dataframe
 mask_fuels = df['fuel_name'].isin(fuel_selection)
 
