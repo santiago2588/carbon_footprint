@@ -31,10 +31,10 @@ def set_background(png_file):
 set_background('background.png')
 
 data_emission = pd.read_excel("emission factors.xlsx")
-
+data=st.dataframe(data_emission)
 
 st.title("Calculo de la huella de carbono industrial")
 
-st.multiselect('Seleccione los combustibles',data_emission)
+st.multiselect('Seleccione los combustibles',data)
 
 
