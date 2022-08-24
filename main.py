@@ -34,14 +34,13 @@ fuel_consumption=st.number_input("Enter fuel consumption",min_value=1)
 
 if st.button("Add row"):
     get_data().append({"Fuel": fuel_selection, "consumption": fuel_consumption})
-
-data=pd.DataFrame(get_data())      
-st.write(data)
+    
+st.write(pd.DataFrame(get_data()))
 
  
-if st.button('Delete'):
-    del data
-    st.write('mr button has delet for u')
+#if st.button('Delete'):
+    #del data
+    #st.write('mr button has delet for u')
     
 
 
