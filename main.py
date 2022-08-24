@@ -83,8 +83,7 @@ if st.button("Results"):
 
  
 if st.button('Reset'):
-    del results, emissions_total
-    
+    del results
 
 
 
