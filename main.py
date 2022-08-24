@@ -27,7 +27,7 @@ st.write(df)
 
 
 #fuel_selection=st.selectbox('Fuel',fuels)
-for fuel in fuels:
+for fuel in mask_fuels:
     fuel_consumption=st.number_input("Enter fuel consumption",min_value=1)
 
 df0=[]
