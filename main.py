@@ -85,6 +85,6 @@ if st.button("Results"):
 
  
 if st.button('Reset'):
-    pyautogui.hotkey("ctrl","F5")
+    del results
 
 
