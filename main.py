@@ -32,11 +32,11 @@ df4=[]
 
 #Obtener listado de combustibles
 fuels=df['fuel_name']
-fuels=st.multiselect('Fuel',fuels)
+fuel_list=st.multiselect('Fuel',fuels)
 #fuel_names=pd.DataFrame(fuels)
 
 # Filtrar dataframe 
-mask_fuels = df['fuel_name'].isin(fuels)
+mask_fuels = df['fuel_name'].isin(fuel_list)
 df = df[mask_fuels]
 df.drop(['scope','fuel_type','heat_content','unit_heat_content'],axis=1,inplace=True)
 st.write(df)
@@ -44,12 +44,12 @@ st.write(df)
 #Obtener listado de consumos
 for i in fuels:
     fuel_consumption=st.number_input(str(i)+" consumption",min_value=1,key=i)
-    #df0.append({"Consumption": fuel_consumption})
+    fuel_consumption.append({"Consumption": fuel_consumption})
 
 #fuel_con=pd.DataFrame(df0)
 
 
-fuel_name,scope,co2=emission(fuels,fuel_consumption)
+fuel_name,scope,co2=emission(fuel_list,fuel_consumption)
 
 df0.append(fuel_name)
 df1.append(co2)
