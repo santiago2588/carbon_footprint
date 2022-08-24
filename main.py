@@ -60,9 +60,9 @@ scope.columns=['Emissions Scope']
 
 results=pd.concat([fuel_name,co2,scope],axis='columns')
 
-emissions_scope1_fija=results.loc[results['Emissions Scope']==1,'CO2 emissions'].sum()
-emissions_scope1_movil=results.loc[results['Emissions Scope']==2,'CO2 emissions'].sum()
-emissions_scope2=results.loc[results['Emissions Scope']==3,'CO2 emissions'].sum()
+emissions_scope1_fija=results.loc[results['Emissions Scope']=='1_combustion_fija','CO2 emissions'].sum()
+emissions_scope1_movil=results.loc[results['Emissions Scope']=='1_combustion_movil','CO2 emissions'].sum()
+emissions_scope2=results.loc[results['Emissions Scope']=='2_electricidad','CO2 emissions'].sum()
 
 emissions_total=np.sum(results['CO2 emissions'])
     
