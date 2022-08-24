@@ -9,9 +9,6 @@ import streamlit as st
 import numpy as np
 import pandas as pd
 
-@st.cache
-def get_data():
-    return []
 
 st.title("Calculo de la huella de carbono industrial")
 
@@ -31,6 +28,9 @@ st.write(df)
 
 fuel_selection=st.selectbox('Fuel',fuels)
 fuel_consumption=st.number_input("Enter fuel consumption",min_value=1)
+
+def get_data():
+    return []
 
 if st.button("Add row"):
     get_data().append({"Fuel": fuel_selection, "consumption": fuel_consumption})
