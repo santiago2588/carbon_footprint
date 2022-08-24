@@ -31,7 +31,6 @@ fuel_consumption=st.number_input("Enter fuel consumption",min_value=1)
 
 df0=[]
 
-@st.cache(allow_output_mutation=True)
 if st.button("Add row"):
     df0.append({"Fuel": fuel_selection, "consumption": fuel_consumption})
     
