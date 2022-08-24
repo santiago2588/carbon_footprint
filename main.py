@@ -13,6 +13,18 @@ st.set_page_config(layout="wide")
 
 st.title("Calculo de la huella de carbono industrial")
 
+placeholder = st.empty()
+
+with placeholder.container():
+    st.title("Try")
+    btn = st.button("try")
+
+#If btn is pressed or True
+if btn:
+    #This would empty everything inside the container
+    placeholder.empty()
+
+
 df=pd.read_csv('emission factors.csv')
 
 #Calculo de las emisiones de carbono
@@ -86,14 +98,4 @@ if st.button("Results"):
 #if st.button('Reset'):
     #del results
 
-placeholder = st.empty()
-
-with placeholder.container():
-    st.title("Try")
-    btn = st.button("try")
-
-#If btn is pressed or True
-if btn:
-    #This would empty everything inside the container
-    placeholder.empty()
 
