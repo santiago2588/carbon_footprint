@@ -20,4 +20,4 @@ fuel_selection=st.multiselect('Fuel',fuels)
 # Mask to filter dataframe
 mask_fuels = df['fuel_name'].isin(fuel_selection)
 
-data = data[mask_fuels]
+df = df[mask_fuels]
