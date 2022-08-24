@@ -8,22 +8,11 @@ Created on Sun Aug 14 18:19:54 2022
 import streamlit as st
 import numpy as np
 import pandas as pd
+import pyautogui
 
 st.set_page_config(layout="wide")
 
 st.title("Calculo de la huella de carbono industrial")
-
-placeholder = st.empty()
-
-with placeholder.container():
-    st.title("Try")
-    btn = st.button("try")
-
-#If btn is pressed or True
-if btn:
-    #This would empty everything inside the container
-    placeholder.empty()
-
 
 df=pd.read_csv('emission factors.csv')
 
@@ -95,7 +84,7 @@ if st.button("Results"):
         st.metric('Emisiones Alcance 2',str("%.1f" % np.float_(emissions_scope2))+' CO2-eq')
 
  
-#if st.button('Reset'):
-    #del results
+if st.button('Reset'):
+    pyautogui.hotkey("ctrl","F5")
 
 
