@@ -86,7 +86,7 @@ st.subheader('3. Presiona el boton Resultados para obtener las emisiones de carb
 if st.button("Resultados"):
     st.write(results)
     
-    st.markdown('Resultados de tus emisiones de carbono')
+    st.success('Resultados de tus emisiones de carbono')
     
     st.metric('Total emisiones',str("%.1f" % np.float_(emissions_total))+ ' CO2-eq')
     
@@ -101,7 +101,7 @@ if st.button("Resultados"):
     with col3:
         st.metric('Emisiones Alcance 2',str("%.1f" % np.float_(emissions_scope2))+' CO2-eq')
         
-    st.markdown('Resultados de tus costos energeticos')
+    st.success('Resultados de tus costos energeticos')
         
     st.metric('Costo total de energia',str("%.1f" % np.float_(cost_total))+ ' USD')
         
