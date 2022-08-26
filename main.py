@@ -52,7 +52,7 @@ st.subheader('2. Ingresa los consumos de las fuentes de energia que seleccionast
 
 #Obtener listado de consumos
 for i in fuel_list:
-    consumption=st.number_input(str(i)+" consumption",min_value=1,key=i)
+    consumption=st.number_input("CONSUMO "+ str(i),min_value=1,key=i)
     consumption_list.append(consumption)
 
 #Prueba de la funcion
