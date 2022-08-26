@@ -17,7 +17,7 @@ st.image(image)
     
 st.title("Calculo de la huella de carbono industrial")
 
-df=pd.read_csv('emission factors.csv')
+df=pd.read_csv('emission factors demo.csv')
 
 #Calculo de las emisiones de carbono
 def emission(fuel,consumption):
