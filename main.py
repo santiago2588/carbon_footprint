@@ -24,9 +24,11 @@ def emission(fuel,consumption):
     fuel_name=df.query("fuel_name==@fuel")['fuel_name']
     heat_content = df.query("fuel_name==@fuel")['heat_content']
     emission_factor = df.query("fuel_name==@fuel")['emission_factor']
+    fuel_cost = df.query("fuel_name==@fuel")['cost_per_unit']
     scope = df.query("fuel_name==@fuel")['scope']
     co2=consumption*heat_content*emission_factor
-    return fuel_name,scope,co2
+    cost=consumption*fuel_cost
+    return fuel_name,scope,co2,cost
 
 #Dataframes para guardar los resultados
 df0=[]
@@ -54,11 +56,12 @@ for i in fuel_list:
     consumption_list.append(consumption)
 
 #Prueba de la funcion
-fuel_name,scope,co2=emission(fuel_list,consumption_list)
+fuel_name,scope,co2,cost=emission(fuel_list,consumption_list)
 
 df0.append(fuel_name)
 df1.append(co2)
 df2.append(scope)
+df3.append(cost)
 
 fuel_name=pd.DataFrame(df0).transpose().reset_index(drop=True)
 fuel_name.columns=['Name']
@@ -66,19 +69,23 @@ co2=pd.DataFrame(df1).transpose().reset_index(drop=True)
 co2.columns=['CO2 emissions']
 scope=pd.DataFrame(df2).transpose().reset_index(drop=True)
 scope.columns=['Emissions Scope']
+cost=pd.DataFrame(df3).transpose().reset_index(drop=True)
+cost.columns=['Fuel cost USD']
 
-results=pd.concat([fuel_name,co2,scope],axis='columns')
+results=pd.concat([fuel_name,co2,scope,cost],axis='columns')
 
 emissions_scope1_fija=results.loc[results['Emissions Scope']=='1_combustion_fija','CO2 emissions'].sum()
 emissions_scope1_movil=results.loc[results['Emissions Scope']=='1_combustion_movil','CO2 emissions'].sum()
 emissions_scope2=results.loc[results['Emissions Scope']=='2_electricidad','CO2 emissions'].sum()
 
 emissions_total=np.sum(results['CO2 emissions'])
+cost_total=np.sum(results['Fuel cost USD'])
 
-st.subheader('3. Presiona el boton Resultados para obtener las emisiones de carbono de tu planta')
+st.subheader('3. Presiona el boton Resultados para obtener las emisiones de carbono de tu planta y los costos de energia')
 
 if st.button("Resultados"):
     st.write(results)
+    
     st.metric('Total emisiones',str("%.1f" % np.float_(emissions_total))+ ' CO2-eq')
     
     col1,col2,col3=st.columns(3)
@@ -91,6 +98,8 @@ if st.button("Resultados"):
             
     with col3:
         st.metric('Emisiones Alcance 2',str("%.1f" % np.float_(emissions_scope2))+' CO2-eq')
+        
+    st.metric('Costo total de energia',str("%.1f" % np.float_(cost_total))+ ' USD')
         
         
 st.subheader("4. Presiona el boton Beneficios para descubrir como podemos ayudarte a conseguir mas beneficios con nuestro producto")
