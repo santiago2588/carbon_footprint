@@ -129,12 +129,12 @@ if st.button('Optimizar'):
     col1,col2=st.columns(2)
     
     with col1:
-        st.metric('Costos de energia que se pueden reducir',str("%.1f" % np.float_(cost_reduced))+ ' CO2-eq')
+        st.metric('Costos de energia que se pueden reducir',str("%.1f" % np.float_(cost_reduced))+ ' USD')
     
     with col2:
-        st.metric('Tus nuevos costos de energia son',str("%.1f" % np.float_(cost_new))+ ' CO2-eq')
+        st.metric('Tus nuevos costos de energia son',str("%.1f" % np.float_(cost_new))+ ' USD')
 
-    st.success('Felicitaciones, has reducido tus costos energeticos y ahora tu planta es mas eficiente!')
+    st.success('Felicitaciones, has reducido tus costos energeticos y ahora tu planta es mas rentable y eficiente!')
     
 st.subheader("5. Presiona el boton Beneficios para descubrir como podemos ayudarte a conseguir mas beneficios con nuestro producto")
         
