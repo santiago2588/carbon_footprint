@@ -15,7 +15,7 @@ from PIL import Image
 image = Image.open('logo_Pungo.png') 
 st.image(image)
     
-st.title("Calculo de la huella de carbono industrial")
+st.title("Calculo y reduccion de la huella de carbono industrial")
 
 df=pd.read_csv('emission factors demo.csv')
 
