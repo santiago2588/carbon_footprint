@@ -86,6 +86,8 @@ st.subheader('3. Presiona el boton Resultados para obtener las emisiones de carb
 if st.button("Resultados"):
     st.write(results)
     
+    st.markdown('Resultados de tus emisiones de carbono')
+    
     st.metric('Total emisiones',str("%.1f" % np.float_(emissions_total))+ ' CO2-eq')
     
     col1,col2,col3=st.columns(3)
@@ -98,6 +100,8 @@ if st.button("Resultados"):
             
     with col3:
         st.metric('Emisiones Alcance 2',str("%.1f" % np.float_(emissions_scope2))+' CO2-eq')
+        
+    st.markdown('Resultados de tus costos energeticos')
         
     st.metric('Costo total de energia',str("%.1f" % np.float_(cost_total))+ ' USD')
         
@@ -115,7 +119,7 @@ if st.button('Optimizar'):
         st.metric('Emisiones que se pueden reducir',str("%.1f" % np.float_(co2_reduced))+ ' CO2-eq')
     
     with col2:
-        st.metric('Tus nuevas emisiones de carbono son',str("%.1f" % np.float_(co2_reduced))+ ' CO2-eq')
+        st.metric('Tus nuevas emisiones de carbono son',str("%.1f" % np.float_(co2_new))+ ' CO2-eq')
     
     st.success('Felicitaciones, has reducido tus emisiones de carbono y ahora tu planta es mas sustentable!')
         
@@ -128,7 +132,7 @@ if st.button('Optimizar'):
         st.metric('Costos de energia que se pueden reducir',str("%.1f" % np.float_(cost_reduced))+ ' CO2-eq')
     
     with col2:
-        st.metric('Tus nuevos costos de energia son',str("%.1f" % np.float_(cost_reduced))+ ' CO2-eq')
+        st.metric('Tus nuevos costos de energia son',str("%.1f" % np.float_(cost_new))+ ' CO2-eq')
 
     st.success('Felicitaciones, has reducido tus costos energeticos y ahora tu planta es mas eficiente!')
     
