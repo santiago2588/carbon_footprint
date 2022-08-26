@@ -101,11 +101,41 @@ if st.button("Resultados"):
         
     st.metric('Costo total de energia',str("%.1f" % np.float_(cost_total))+ ' USD')
         
+
+st.subheader("4. Presiona el boton Optimizar para descubrir cuanto podrias disminuir tus emisiones de carbono y tus costos de energia con nuestra tecnologia")      
+
+if st.button('Optimizar'): 
+    
+    co2_reduced=emissions_total*0.2
+    co2_new=emissions_total*0.8
+    
+    col1,col2=st.columns(2)
+    
+    with col1:
+        st.metric('Emisiones que se pueden reducir',str("%.1f" % np.float_(co2_reduced))+ ' CO2-eq')
+    
+    with col2:
+        st.metric('Tus nuevas emisiones de carbono son',str("%.1f" % np.float_(co2_reduced))+ ' CO2-eq')
+    
+    st.success('Felicitaciones, has reducido tus emisiones de carbono y ahora tu planta es mas sustentable!')
         
-st.subheader("4. Presiona el boton Beneficios para descubrir como podemos ayudarte a conseguir mas beneficios con nuestro producto")
+    cost_reduced=cost_total*0.2
+    cost_new=cost_total*0.8
+    
+    col1,col2=st.columns(2)
+    
+    with col1:
+        st.metric('Costos de energia que se pueden reducir',str("%.1f" % np.float_(cost_reduced))+ ' CO2-eq')
+    
+    with col2:
+        st.metric('Tus nuevos costos de energia son',str("%.1f" % np.float_(cost_reduced))+ ' CO2-eq')
+
+    st.success('Felicitaciones, has reducido tus costos energeticos y ahora tu planta es mas eficiente!')
+    
+st.subheader("5. Presiona el boton Beneficios para descubrir como podemos ayudarte a conseguir mas beneficios con nuestro producto")
         
 if st.button('Beneficios'): 
-        st.success("Felicitaciones, has comenzado a desbloquear algunos de los beneficios de la digitalización para el calculo de la huella de carbono en tu empresa.") 
+        st.success("Felicitaciones, has comenzado a desbloquear algunos de los beneficios de la digitalización para el calculo de la huella de carbono en tu empresa, y has demostrado que tu planta puede ser mas sustentable y a la vez reducir tus costos operativos") 
         st.markdown("En esta ocasion, te hemos presentado los beneficios del modulo de Calculos. Sin embargo, quedan inmensas oportunidades para disminuir tu huella de carbono al integrar todos los modulos de ASTRO") 
         st.markdown("Si estás listo para emprender este camino y llevar la digitalización al siguiente nivel, contactate con nosotros para guiarte en el proceso y recibir asesoria de nuestros expertos para optimizar tus operaciones.")
     
