@@ -37,49 +37,49 @@ df2=[]
 df3=[]
 consumption_list=[]
 
-st.subheader('1. Selecciona las fuentes de energia que utilizas en tu planta')
+with st.expander('1. Selecciona las fuentes de energia que utilizas en tu planta'):
+    
+    #Obtener listado de combustibles
+    fuels=df['fuel_name']
+    fuel_list=st.multiselect('Fuentes de energia',fuels)
 
-#Obtener listado de combustibles
-fuels=df['fuel_name']
-fuel_list=st.multiselect('Fuentes de energia',fuels)
+    # Filtrar dataframe 
+    mask_fuels = df['fuel_name'].isin(fuel_list)
+    df = df[mask_fuels]
+    st.write(df)
 
-# Filtrar dataframe 
-mask_fuels = df['fuel_name'].isin(fuel_list)
-df = df[mask_fuels]
-st.write(df)
+with st.expander('2. Ingresa los consumos de las fuentes de energia que seleccionaste, en las unidades correspondientes que se muestran en la tabla anterior'):
+    
+    #Obtener listado de consumos
+    for i in fuel_list:
+        consumption=st.number_input("CONSUMO "+ str(i),min_value=1,key=i)
+        consumption_list.append(consumption)
 
-st.subheader('2. Ingresa los consumos de las fuentes de energia que seleccionaste, en las unidades correspondientes que se muestran en la tabla anterior')
+    #Prueba de la funcion
+    fuel_name,scope,co2,cost=emission(fuel_list,consumption_list)
 
-#Obtener listado de consumos
-for i in fuel_list:
-    consumption=st.number_input("CONSUMO "+ str(i),min_value=1,key=i)
-    consumption_list.append(consumption)
+    df0.append(fuel_name)
+    df1.append(co2)
+    df2.append(scope)
+    df3.append(cost)
 
-#Prueba de la funcion
-fuel_name,scope,co2,cost=emission(fuel_list,consumption_list)
+    fuel_name=pd.DataFrame(df0).transpose().reset_index(drop=True)
+    fuel_name.columns=['Name']
+    co2=pd.DataFrame(df1).transpose().reset_index(drop=True)
+    co2.columns=['CO2 emissions']
+    scope=pd.DataFrame(df2).transpose().reset_index(drop=True)
+    scope.columns=['Emissions Scope']
+    cost=pd.DataFrame(df3).transpose().reset_index(drop=True)
+    cost.columns=['Fuel cost USD']
 
-df0.append(fuel_name)
-df1.append(co2)
-df2.append(scope)
-df3.append(cost)
+    results=pd.concat([fuel_name,co2,scope,cost],axis='columns')
 
-fuel_name=pd.DataFrame(df0).transpose().reset_index(drop=True)
-fuel_name.columns=['Name']
-co2=pd.DataFrame(df1).transpose().reset_index(drop=True)
-co2.columns=['CO2 emissions']
-scope=pd.DataFrame(df2).transpose().reset_index(drop=True)
-scope.columns=['Emissions Scope']
-cost=pd.DataFrame(df3).transpose().reset_index(drop=True)
-cost.columns=['Fuel cost USD']
+    emissions_scope1_fija=results.loc[results['Emissions Scope']=='1_combustion_fija','CO2 emissions'].sum()
+    emissions_scope1_movil=results.loc[results['Emissions Scope']=='1_combustion_movil','CO2 emissions'].sum()
+    emissions_scope2=results.loc[results['Emissions Scope']=='2_electricidad','CO2 emissions'].sum()
 
-results=pd.concat([fuel_name,co2,scope,cost],axis='columns')
-
-emissions_scope1_fija=results.loc[results['Emissions Scope']=='1_combustion_fija','CO2 emissions'].sum()
-emissions_scope1_movil=results.loc[results['Emissions Scope']=='1_combustion_movil','CO2 emissions'].sum()
-emissions_scope2=results.loc[results['Emissions Scope']=='2_electricidad','CO2 emissions'].sum()
-
-emissions_total=np.sum(results['CO2 emissions'])
-cost_total=np.sum(results['Fuel cost USD'])
+    emissions_total=np.sum(results['CO2 emissions'])
+    cost_total=np.sum(results['Fuel cost USD'])
 
 st.subheader('3. Presiona el boton Resultados para obtener las emisiones de carbono de tu planta y los costos de energia')
 
