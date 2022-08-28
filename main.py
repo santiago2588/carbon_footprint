@@ -37,6 +37,18 @@ df2=[]
 df3=[]
 consumption_list=[]
 
+with st.expander('Qué es la huella de carbono y cómo se calcula?'):
+    
+    st.markdown("La huella de carbono representa las emisiones de los gases de efecto invernadero debido al consumo de combustibles de origen fósil,\
+                (por ejemplo, la gasolina o fuel oil) y al consumo de electricidad en las operaciones industriales.")
+    
+    st.markdown("De acuerdo con estándares internacionales, se distinguen dos tipos de alcances para el cálculo de la huella de carbono. El primer alcance se relaciona con las\
+                 emisiones por la combustión de combustibles en fuentes fijas (por ejemplo, calderos) o móviles (por ejemplo, vehículos. El segundo alcance se relaciona\
+                 con las emisiones por el consumo de electricidad en las operaciones (por ejemplo, para operar un equipo industrial")
+    
+    #image1 = Image.open('modulos ASTRO.png')
+    #st.image(image1)
+    
 
 with st.expander('Instrucciones'):
     
