@@ -135,7 +135,7 @@ with st.expander("3. Presiona el boton Optimizar para descubrir cuanto podrias d
 
         st.success('Felicitaciones, has reducido tus costos energeticos y ahora tu planta es mas rentable y eficiente!')
     
-with st.expander("4. Presiona el boton Beneficios para descubrir como podemos ayudarte a conseguir mas beneficios con nuestro producto")
+with st.expander("4. Presiona el boton Beneficios para descubrir como podemos ayudarte a conseguir mas beneficios con nuestro producto"):
         
     if st.button('Beneficios'): 
             st.success("Felicitaciones, has comenzado a desbloquear algunos de los beneficios de la digitalización para el calculo de la huella de carbono en tu empresa, y has demostrado que tu planta puede ser mas sustentable y a la vez reducir tus costos operativos") 
