@@ -37,6 +37,19 @@ df2=[]
 df3=[]
 consumption_list=[]
 
+
+with st.expander('Instrucciones'):
+    
+    st.subheader("AUCAF es una solucion modular que se adapta a tus necesidades y genera valor en tus operaciones. AUCAF incluye los siguientes modulos:")
+    
+    #image1 = Image.open('modulos ASTRO.png')
+    #st.image(image1)
+      
+    st.subheader('En esta demostracion, te presentamos el Modulo de Calculos, que permite calcular tus emisiones de carbono y costos de energia en tus operaciones.')
+                 
+    st.subheader('Esta herramienta tambien permite reducir tus emisiones de carbono y costos de energia en funcion de los resultados obtenidos en el modelo\
+                  generando beneficios economicos. Para ello, la herramienta utiliza predicciones basadas en inteligencia artificial y metodologias para la integracion de procesos y eficiencia energetica.')
+
 with st.expander('1. Selecciona las fuentes de energia que utilizas en tu planta y los consumos en las unidades correspondientes que se muestran en la tabla'):
     
     #Obtener listado de combustibles
