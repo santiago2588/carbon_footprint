@@ -49,6 +49,8 @@ with st.expander('Instrucciones'):
                  
     st.markdown('Esta herramienta tambien permite reducir tus emisiones de carbono y costos de energia en funcion de los resultados obtenidos en el modelo\
                   generando beneficios economicos. Para ello, la herramienta utiliza predicciones basadas en inteligencia artificial y metodologias para la integracion de procesos y eficiencia energetica.')
+    
+     st.markdown('Por favor, sigue las instrucciones que se presentan a continuacion.')
 
 with st.expander('1. Selecciona las fuentes de energia que utilizas en tu planta y los consumos en las unidades correspondientes que se muestran en la tabla'):
     
