@@ -37,7 +37,7 @@ df2=[]
 df3=[]
 consumption_list=[]
 
-with st.expander('1. Selecciona las fuentes de energia que utilizas en tu planta'):
+with st.expander('1. Selecciona las fuentes de energia que utilizas en tu planta y los consumos en las unidades correspondientes que se muestran en la tabla'):
     
     #Obtener listado de combustibles
     fuels=df['fuel_name']
@@ -48,8 +48,7 @@ with st.expander('1. Selecciona las fuentes de energia que utilizas en tu planta
     df = df[mask_fuels]
     st.write(df)
 
-with st.expander('2. Ingresa los consumos de las fuentes de energia que seleccionaste, en las unidades correspondientes que se muestran en la tabla anterior'):
-    
+   
     #Obtener listado de consumos
     for i in fuel_list:
         consumption=st.number_input("CONSUMO "+ str(i),min_value=1,key=i)
