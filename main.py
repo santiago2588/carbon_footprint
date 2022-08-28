@@ -132,8 +132,7 @@ with st.expander("3. Descubre cuanto podrias disminuir tus emisiones de carbono 
     with col2:
         st.metric('Tus nuevas emisiones de carbono son',str("%.1f" % np.float_(co2_new))+ ' CO2-eq')
 
-    st.success('Felicitaciones, has reducido tus emisiones de carbono y ahora tu planta es mas sustentable!')
-
+    
     cost_reduced=cost_total*0.2
     cost_new=cost_total*0.8
 
@@ -145,7 +144,7 @@ with st.expander("3. Descubre cuanto podrias disminuir tus emisiones de carbono 
     with col2:
         st.metric('Tus nuevos costos de energia son',str("%.1f" % np.float_(cost_new))+ ' USD')
 
-    st.success('Felicitaciones, has reducido tus costos energeticos y ahora tu planta es mas rentable y eficiente!')
+    st.success('Felicitaciones, has reducido tus emisiones de carbono y los costos energeticos y ahora tu planta es mas rentable y eficiente!')
     
 with st.expander("4. Descubre como podemos ayudarte a conseguir mas beneficios con nuestro producto"):
         
