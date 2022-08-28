@@ -148,7 +148,6 @@ with st.expander("3. Descubre cuanto podrias disminuir tus emisiones de carbono 
     
 with st.expander("4. Descubre como podemos ayudarte a conseguir mas beneficios con nuestro producto"):
         
-        st.success("Felicitaciones, has comenzado a desbloquear algunos de los beneficios de la digitalización para el calculo de la huella de carbono en tu empresa, y has demostrado que tu planta puede ser mas sustentable y a la vez reducir tus costos operativos") 
         st.markdown("En esta ocasion, te hemos presentado los beneficios del modulo de Calculos. Sin embargo, quedan inmensas oportunidades para disminuir tu huella de carbono al integrar todos los modulos de AUCAF") 
         st.markdown("Si estás listo para emprender este camino y llevar la digitalización al siguiente nivel, contactate con nosotros para guiarte en el proceso y recibir asesoria de nuestros expertos para optimizar tus operaciones.")
 
