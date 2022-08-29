@@ -11,11 +11,16 @@ import pandas as pd
 
 st.set_page_config(layout="wide")
 
+st.set_page_config(
+    page_title="AUCAF",
+    page_icon="👋",
+)
+
 from PIL import Image
 image = Image.open('logo_Pungo.png') 
 st.image(image)
-    
-st.title("Calculo y reduccion de la huella de carbono industrial")
+
+st.write("# Bienvenido al demo de AUCAF, la herramienta digital para el calculo y reduccion de la huella de carbono industrial 👋")    
 
 df=pd.read_csv('emission factors demo.csv')
 
@@ -37,8 +42,7 @@ df2=[]
 df3=[]
 consumption_list=[]
 
-with st.expander("""
-### Qué es la huella de carbono y cómo se calcula?"""):
+with st.expander("Qué es la huella de carbono y cómo se calcula?"):
     
     st.markdown("La huella de carbono representa las emisiones de los gases de efecto invernadero debido al consumo de combustibles de origen fósil,\
                 (por ejemplo, la gasolina o fuel oil) y al consumo de electricidad en las operaciones industriales.")
