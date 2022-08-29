@@ -52,7 +52,7 @@ with st.expander('Qué es la huella de carbono y cómo se calcula?'):
 
 with st.expander('Instrucciones'):
     
-    st.markdown("AUCAF es una herramienta digital que permite calcular la huella de carbono en las operaciones industriales, y los costos de energía asociados")
+    st.markdown("###AUCAF es una herramienta digital que permite calcular la huella de carbono en las operaciones industriales, y los costos de energía asociados")
     
     st.markdown("AUCAF es una solucion modular que se adapta a tus necesidades y genera valor en tus operaciones. AUCAF incluye los siguientes modulos:")
     
