@@ -19,7 +19,7 @@ with st.expander("Qué es la huella de carbono y cómo se calcula?"):
     #st.image(image1)
     
 
-with st.expander('Instrucciones'):
+with st.expander('Para que sirve AUCAF?'):
     
     st.markdown("""
     ### AUCAF es una herramienta digital que permite calcular la huella de carbono en las operaciones industriales, y los costos de energía asociados""")
