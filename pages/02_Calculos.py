@@ -35,7 +35,7 @@ with st.expander('1. Selecciona las fuentes de energia que utilizas en tu planta
     # Filtrar dataframe 
     mask_fuels = df['fuel_name'].isin(fuel_list)
     df = df[mask_fuels]
-    st.write(df)
+    st.dataframe(df)
 
    
     #Obtener listado de consumos
