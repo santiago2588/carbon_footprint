@@ -1,7 +1,6 @@
 import streamlit as st
 
 st.markdown("# Instrucciones")
-st.sidebar.markdown("# Instrucciones")
 
 with st.expander("Qué es la huella de carbono y cómo se calcula?"):
     
