@@ -20,6 +20,7 @@ st.write("## Bienvenido al demo de AUCAF, la herramienta digital para el calculo
 df=pd.read_csv('emission factors demo.csv')
 
 #Calculo de las emisiones de carbono
+@st.cache
 def emission(fuel,consumption):
     fuel_name=df.query("fuel_name==@fuel")['fuel_name']
     heat_content = df.query("fuel_name==@fuel")['heat_content']
