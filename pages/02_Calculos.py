@@ -120,6 +120,7 @@ with st.expander("3. Descubre cuanto podrias disminuir tus emisiones de carbono 
     with col2:
         st.metric('Tus nuevos costos de energia son',str("%.1f" % np.float_(cost_new))+ ' USD')
 
-    st.success(""""
+    st.success("""
     Felicitaciones, has reducido tus emisiones de carbono y los costos energeticos y ahora tu planta es mas rentable y eficiente! 
+    
     Si quieres conocer como puedes lograr estos beneficios, contáctanos para guiarte en el proceso y recibir asesoria de nuestros expertos""")
