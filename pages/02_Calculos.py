@@ -65,7 +65,7 @@ with st.expander('1. Selecciona las fuentes de energia que utilizas en tu planta
     results=pd.concat([fuel_name,co2,scope,cost],axis='columns')
     results_1=results.rename(columns={'fuel_name':'Fuente de energia','co2':'Emisiones de CO2','scope':'Alcance de las emisiones','cost':'Costo consumo energia (USD)'})
 
-emissions_scope1_fija=results.loc[results['Emissions Scope']=='1_combustion_fija','CO2 emissions'].sum()
+    emissions_scope1_fija=results.loc[results['Emissions Scope']=='1_combustion_fija','CO2 emissions'].sum()
     emissions_scope1_movil=results.loc[results['Emissions Scope']=='1_combustion_movil','CO2 emissions'].sum()
     emissions_scope2=results.loc[results['Emissions Scope']=='2_electricidad','CO2 emissions'].sum()
 
