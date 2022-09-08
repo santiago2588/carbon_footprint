@@ -26,8 +26,8 @@ with st.expander('Para que sirve AUCAF?'):
     
     st.markdown("AUCAF es una solucion modular que se adapta a tus necesidades y genera valor en tus operaciones. AUCAF incluye los siguientes modulos:")
     
-    #image1 = Image.open('modulos ASTRO.png')
-    #st.image(image1)
+    image1 = Image.open('modulos aucaf.png')
+    st.image(image1)
       
     st.markdown('En esta demostracion, te presentamos el Modulo de Calculos, que permite calcular tus emisiones de carbono y costos de energia en tus operaciones.')
                  
