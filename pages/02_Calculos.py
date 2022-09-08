@@ -73,8 +73,8 @@ with st.expander('1. Selecciona las fuentes de energia que utilizas en tu planta
 
 with st.expander('2. Visualiza las emisiones de carbono de tu planta y los costos de energia'):
 
-    results=results.rename(columns={'fuel_name':'Fuente de energia','co2':'Emisiones de CO2','scope':'Alcance de las emisiones','cost':'Costo consumo energia (USD)'})
-    st.dataframe(results)
+    results_1=results.rename(columns={'fuel_name':'Fuente de energia','co2':'Emisiones de CO2','scope':'Alcance de las emisiones','cost':'Costo consumo energia (USD)'})
+    st.dataframe(results_1)
 
     st.markdown('## Resultados de tus emisiones de carbono')
 
