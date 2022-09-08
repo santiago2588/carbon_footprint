@@ -16,8 +16,8 @@ with st.expander("Qué es la huella de carbono y cómo se calcula?"):
                  """
                 )
     
-    #image1 = Image.open('modulos ASTRO.png')
-    #st.image(image1)
+    image1 = Image.open('huella alcances.jpg')
+    st.image(image1)
     
 
 with st.expander('Para que sirve AUCAF?'):
