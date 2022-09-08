@@ -35,8 +35,9 @@ with st.expander('1. Selecciona las fuentes de energia que utilizas en tu planta
     # Filtrar dataframe 
     mask_fuels = df['fuel_name'].isin(fuel_list)
     df = df[mask_fuels]
-    fuel_prop=df[['fuel_name','consumption_unit','cost_per_unit']]
-    st.dataframe(fuel_prop)
+    fuel_data=df[['fuel_name','consumption_unit','cost_per_unit']]
+    fuel_data=fuel_data.rename(columns={'fuel_name':'Fuente de energia','consumption_unit':'Unidad consumo de energia','cost_per_unit':'Costo por unidad de energia'})
+    st.dataframe(fuel_data)
 
    
     #Obtener listado de consumos
