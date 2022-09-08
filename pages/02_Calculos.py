@@ -73,7 +73,7 @@ with st.expander('1. Selecciona las fuentes de energia que utilizas en tu planta
 
 with st.expander('2. Visualiza las emisiones de carbono de tu planta y los costos de energia'):
 
-    st.dataframe(results_1)
+    st.dataframe(results)
 
     st.markdown('## Resultados de tus emisiones de carbono')
 
