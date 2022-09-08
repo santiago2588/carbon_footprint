@@ -5,7 +5,7 @@ st.markdown("# Instrucciones")
 
 with st.expander("Qué es la huella de carbono y cómo se calcula?"):
     
-    st.markdown("### La huella de carbono representa las emisiones de los gases de efecto invernadero debido al consumo de combustibles de origen fósil,\
+    st.markdown("## La huella de carbono representa las emisiones de los gases de efecto invernadero debido al consumo de combustibles de origen fósil,\
                 (por ejemplo, la gasolina o fuel oil) y al consumo de electricidad en las operaciones industriales.")
     
     st.markdown(
