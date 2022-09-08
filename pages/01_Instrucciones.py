@@ -10,9 +10,10 @@ with st.expander("Qué es la huella de carbono y cómo se calcula?"):
     
     st.markdown(
         """
-        De acuerdo con estándares internacionales, se distinguen dos tipos de alcances para el cálculo de la huella de carbono. 
-        - El primer alcance se relaciona con las emisiones por la combustión de combustibles en fuentes fijas (por ejemplo, calderos) o móviles (por ejemplo, vehículos). 
-        - El segundo alcance se relaciona con las emisiones por el consumo de electricidad en las operaciones (por ejemplo, para operar un equipo industrial).
+        De acuerdo con estándares internacionales, se distinguen tres tipos de alcances para el cálculo de la huella de carbono. 
+        - Alcance 1 (Directo): emisiones por la combustión de combustibles en fuentes fijas (por ejemplo, calderos) o móviles (por ejemplo, vehículos). 
+        - Alcance 2 (Indirecto): emisiones por el consumo de electricidad en las operaciones (por ejemplo, para operar un equipo industrial).
+        - Alcance 3 (Indirecto): emisiones en la cadena de suministro (por ejemplo, producción de materias primas, uso de productos, disposición de residuos).
                  """
                 )
     
