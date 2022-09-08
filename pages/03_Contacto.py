@@ -1,8 +1,6 @@
 import streamlit as st
 
 st.markdown("# Contacto")
-st.markdown("En esta ocasion, te hemos presentado los beneficios del modulo de Calculos. Sin embargo, quedan inmensas oportunidades para disminuir tu huella de carbono al integrar todos los modulos de AUCAF") 
-st.markdown("Si estás listo para emprender este camino y llevar la digitalización al siguiente nivel, contactate con nosotros para guiarte en el proceso y recibir asesoria de nuestros expertos para optimizar tus operaciones.")
 
 contact_form = """
 <form action="https://formsubmit.co/zapaz.consultores@gmail.com" method="POST">

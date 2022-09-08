@@ -123,4 +123,6 @@ with st.expander("3. Descubre cuanto podrias disminuir tus emisiones de carbono 
     st.success("""
     Felicitaciones, has reducido tus emisiones de carbono y los costos energeticos y ahora tu planta es mas rentable y eficiente! 
     
+    En esta ocasion, te hemos presentado los beneficios del modulo de Calculos. Sin embargo, quedan inmensas oportunidades para disminuir tu huella de carbono al integrar todos los modulos de AUCAF.
+    
     Si quieres conocer como puedes lograr estos beneficios, contáctanos para guiarte en el proceso y recibir asesoria de nuestros expertos.""")
