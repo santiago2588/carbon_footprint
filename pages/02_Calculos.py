@@ -58,7 +58,7 @@ with st.expander('1. Selecciona las fuentes de energia que utilizas en tu planta
     co2=pd.DataFrame(df1).transpose().reset_index(drop=True)
     co2.columns=['Emisiones CO2']
     scope=pd.DataFrame(df2).transpose().reset_index(drop=True)
-    scope.columns=['Alcance emisiones]
+    scope.columns=['Alcance emisiones']
     cost=pd.DataFrame(df3).transpose().reset_index(drop=True)
     cost.columns=['Costo energia USD']
 
