@@ -54,16 +54,15 @@ with st.expander('1. Selecciona las fuentes de energia que utilizas en tu planta
     df3.append(cost)
 
     fuel_name=pd.DataFrame(df0).transpose().reset_index(drop=True)
-    fuel_name.columns=['Name']
+    fuel_name.columns=['Fuente de energia']
     co2=pd.DataFrame(df1).transpose().reset_index(drop=True)
-    co2.columns=['CO2 emissions']
+    co2.columns=['Emisiones de CO2']
     scope=pd.DataFrame(df2).transpose().reset_index(drop=True)
-    scope.columns=['Emissions Scope']
+    scope.columns=['Alcance emisiones']
     cost=pd.DataFrame(df3).transpose().reset_index(drop=True)
-    cost.columns=['Fuel cost USD']
+    cost.columns=['Costo energia, USD']
 
     results=pd.concat([fuel_name,co2,scope,cost],axis='columns')
-    results_1=results.rename(columns={'fuel_name':'Fuente de energia','co2':'Emisiones de CO2','scope':'Alcance de las emisiones','cost':'Costo consumo energia (USD)'})
 
     emissions_scope1_fija=results.loc[results['Emissions Scope']=='1_combustion_fija','CO2 emissions'].sum()
     emissions_scope1_movil=results.loc[results['Emissions Scope']=='1_combustion_movil','CO2 emissions'].sum()
@@ -74,7 +73,7 @@ with st.expander('1. Selecciona las fuentes de energia que utilizas en tu planta
 
 with st.expander('2. Visualiza las emisiones de carbono de tu planta y los costos de energia'):
 
-    st.dataframe(results_1)
+    st.dataframe(results)
 
     st.markdown('## Resultados de tus emisiones de carbono')
 
