@@ -1,0 +1,25 @@
+﻿fuel_name,consumption_unit,cost_per_unit,heat_content,unit_heat_content,emission_factor,unit_emission_factor,scope,fuel_type
+CARBON INDUSTRIAL,short ton,685,22.35,mmBtu per short ton,95.402,kgCO2e/mmBtu,1_combustion_fija,Solid
+CARBON COKE,short ton,685,24.8,mmBtu per short ton,114.402,kgCO2e/mmBtu,1_combustion_fija,Solid
+MADERA,short ton,500,17.48,mmBtu per short ton,1.1556,kgCO2e/mmBtu,1_combustion_fija,Solid
+GAS NATURAL,scf,0.008,0.001026,mmBtu per scf,53.1145,kgCO2e/mmBtu,1_combustion_fija,Gas
+FUEL GAS,scf,0.005,0.001388,mmBtu per scf,59.243,kgCO2e/mmBtu,1_combustion_fija,Gas
+GAS PROPANO,scf,0.005,0.002516,mmBtu per scf,61.703,kgCO2e/mmBtu,1_combustion_fija,Gas
+GAS RELLENO SANITARIO,scf,0.002,0.000485,mmBtu per scf,0.25655,kgCO2e/mmBtu,1_combustion_fija,Gas
+CRUDO REDUCIDO,gallon,0.4,0.138,mmBtu per gallon,74.783,kgCO2e/mmBtu,1_combustion_fija,Liquid
+FUEL OIL LIVIANO,gallon,2.3,0.146,mmBtu per gallon,75.283,kgCO2e/mmBtu,1_combustion_fija,Liquid
+GAS LICUADO DE PETROLEO (GLP) INDUSTRIAL,gallon,2.2,0.092,mmBtu per gallon,61.953,kgCO2e/mmBtu,1_combustion_fija,Liquid
+GASOLINA INDUSTRIAL,gallon,3.746,0.125,mmBtu per gallon,70.463,kgCO2e/mmBtu,1_combustion_fija,Liquid
+FUEL OIL No. 6 INDUSTRIAL,gallon,2.3,0.15,mmBtu per gallon,75.343,kgCO2e/mmBtu,1_combustion_fija,Liquid
+BIODIESEL (100%),gallon,4,0.128,mmBtu per gallon,0.05995,kgCO2e/mmBtu,1_combustion_fija,Liquid
+ETHANOL (100%),gallon,4,0.084,mmBtu per gallon,0.05995,kgCO2e/mmBtu,1_combustion_fija,Liquid
+GASOLINA EXTRA AUTOMOTRIZ,gallon,2.22,1,0,8.819,kgCO2e/gal (US),1_combustion_movil,Liquid
+DIESEL 2 / DIESEL PREMIUM (AUTOMOTRIZ),gallon,1.606,1,0,10.222,kgCO2e/gal (US),1_combustion_movil,Liquid
+BIODIESEL (100%) AUTOMOTRIZ,gallon,4,1,0,0.013,kgCO2e/gal (US),1_combustion_movil,Liquid
+GAS NATURAL COMPRIMIDO AUTOMOTRIZ,scf,0.008,1,0,7.084,kgCO2e/scf,1_combustion_movil,Gas
+ETANOL (100%) AUTOMOTRIZ,gallon,4,1,0,0.457,kgCO2e/gal (US),1_combustion_movil,Liquid
+JET FUEL,gallon,3.16,1,0,9.83,kgCO2e/gal (US),1_combustion_movil,Liquid
+ELECTRICIDAD SISTEMA NACIONAL INTERCONECTADO,kWh,0.092,1,0,0.1586,kg CO2 eq/kWh,2_electricidad,Electricity
+ELECTRICIDAD GENERACION CON FUEL OIL,kWh,0.15,1,0,0.9508,kg CO2 eq/kWh,2_electricidad,Electricity
+ELECTRICIDAD GENERACION CON GAS NATURAL,kWh,0.15,1,0,0.6829,kg CO2 eq/kWh,2_electricidad,Electricity
+ELECTRICIDAD GENERACION CON DIESEL,kWh,0.15,1,0,0.9518,kg CO2 eq/kWh,2_electricidad,Electricity
