@@ -17,7 +17,7 @@ with st.expander("Qué es la huella de carbono y cómo se calcula?"):
                  """
                 )
     
-    image1 = Image.open('huella alcances.jpg')
+    image1 = Image.open('Resources/huella alcances.jpg')
     st.image(image1)
     
 
@@ -28,7 +28,7 @@ with st.expander('Para que sirve AUCAF?'):
     
     st.markdown("AUCAF es una solucion modular que se adapta a tus necesidades y genera valor en tus operaciones. AUCAF incluye los siguientes modulos:")
     
-    image1 = Image.open('modulos aucaf.png')
+    image1 = Image.open('Resources/modulos aucaf.png')
     st.image(image1)
       
     st.markdown('En esta demostracion, te presentamos el Modulo de Calculos, que permite calcular tus emisiones de carbono y costos de energia en tus operaciones.')
