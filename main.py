@@ -13,5 +13,5 @@ from PIL import Image
 image = Image.open('logo_Pungo.png') 
 st.image(image)
 
-st.write("# Bienvenido al demo de AUCAF, la herramienta digital para el cálculo, monitoreo y reducción de la huella de carbono en la industria")
+st.write("# Bienvenido al demo de AUCAF: la herramienta digital para el cálculo, monitoreo y reducción de la huella de carbono en la industria")
 
