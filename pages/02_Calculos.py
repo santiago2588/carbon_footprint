@@ -75,8 +75,6 @@ with st.expander('2. Visualiza las emisiones de carbono de tu planta y los costo
 
     st.dataframe(results)
 
-    #st.markdown('## Resultados de tus emisiones de carbono')
-
     st.metric('Total emisiones de carbono',str("%.1f" % np.float_(emissions_total))+ ' CO2-eq')
 
     #col1,col2,col3=st.columns(3)
@@ -89,8 +87,6 @@ with st.expander('2. Visualiza las emisiones de carbono de tu planta y los costo
 
     #with col3:
         #st.metric('Emisiones Alcance 2',str("%.1f" % np.float_(emissions_scope2))+' CO2-eq')
-
-    #st.markdown('## Resultados de tus costos energeticos')
 
     st.metric('Costo total de energia',str("%.1f" % np.float_(cost_total))+ ' USD')
         
