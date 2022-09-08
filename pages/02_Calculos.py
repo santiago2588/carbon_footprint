@@ -79,16 +79,16 @@ with st.expander('2. Visualiza las emisiones de carbono de tu planta y los costo
 
     st.metric('Total emisiones',str("%.1f" % np.float_(emissions_total))+ ' CO2-eq')
 
-    col1,col2,col3=st.columns(3)
+    #col1,col2,col3=st.columns(3)
 
-    with col1:
-        st.metric('Emisiones Alcance 1-Combustion fija',str("%.1f" % np.float_(emissions_scope1_fija))+' CO2-eq')
+    #with col1:
+        #st.metric('Emisiones Alcance 1-Combustion fija',str("%.1f" % np.float_(emissions_scope1_fija))+' CO2-eq')
 
-    with col2:
-        st.metric('Emisiones Alcance 1-Combustion movil',str("%.1f" % np.float_(emissions_scope1_movil))+' CO2-eq')
+    #with col2:
+        #st.metric('Emisiones Alcance 1-Combustion movil',str("%.1f" % np.float_(emissions_scope1_movil))+' CO2-eq')
 
-    with col3:
-        st.metric('Emisiones Alcance 2',str("%.1f" % np.float_(emissions_scope2))+' CO2-eq')
+    #with col3:
+        #st.metric('Emisiones Alcance 2',str("%.1f" % np.float_(emissions_scope2))+' CO2-eq')
 
     st.markdown('## Resultados de tus costos energeticos')
 
