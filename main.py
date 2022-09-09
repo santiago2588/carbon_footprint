@@ -7,7 +7,7 @@ Created on Sun Aug 14 18:19:54 2022
 
 import streamlit as st
 
-st.set_page_config(layout="wide",page_title="AUCAF",page_icon="👋")
+st.set_page_config(layout="wide",page_title="AUCAF",page_icon="🌿",layout='centered')
 
 from PIL import Image
 image = Image.open('Resources/logo_Pungo.png')
