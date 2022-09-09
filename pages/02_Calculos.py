@@ -56,7 +56,7 @@ with st.expander('1. Selecciona las fuentes de energia que utilizas en tu planta
     fuel_name=pd.DataFrame(df0).transpose().reset_index(drop=True)
     fuel_name.columns=['Fuente energia']
     co2=pd.DataFrame(df1).transpose().reset_index(drop=True)
-    co2.columns=['Emisiones CO2']
+    co2.columns=['Emisiones kg CO2-eq']
     scope=pd.DataFrame(df2).transpose().reset_index(drop=True)
     scope.columns=['Alcance emisiones']
     cost=pd.DataFrame(df3).transpose().reset_index(drop=True)
@@ -64,29 +64,29 @@ with st.expander('1. Selecciona las fuentes de energia que utilizas en tu planta
 
     results=pd.concat([fuel_name,co2,scope,cost],axis='columns')
 
-    emissions_scope1_fija=results.loc[results['Alcance emisiones']=='1_combustion_fija','Emisiones CO2'].sum()
-    emissions_scope1_movil=results.loc[results['Alcance emisiones']=='1_combustion_movil','Emisiones CO2'].sum()
-    emissions_scope2=results.loc[results['Alcance emisiones']=='2_electricidad','Emisiones CO2'].sum()
+    emissions_scope1_fija=results.loc[results['Alcance emisiones']=='1_combustion_fija','Emisiones kg CO2-eq'].sum()
+    emissions_scope1_movil=results.loc[results['Alcance emisiones']=='1_combustion_movil','Emisiones kg CO2-eq'].sum()
+    emissions_scope2=results.loc[results['Alcance emisiones']=='2_electricidad','Emisiones kg CO2-eq'].sum()
 
-    emissions_total=np.sum(results['Emisiones CO2'])
+    emissions_total=np.sum(results['Emisiones kg CO2-eq'])
     cost_total=np.sum(results['Costo energia USD'])
 
 with st.expander('2. Visualiza las emisiones de carbono de tu planta y los costos de energia'):
 
     st.dataframe(results)
 
-    st.metric('Total emisiones de carbono',str("%.1f" % np.float_(emissions_total))+ ' CO2-eq')
+    st.metric('Total emisiones de carbono',str("%.1f" % np.float_(emissions_total))+ ' kg CO2-eq')
 
     #col1,col2,col3=st.columns(3)
 
     #with col1:
-        #st.metric('Emisiones Alcance 1-Combustion fija',str("%.1f" % np.float_(emissions_scope1_fija))+' CO2-eq')
+        #st.metric('Emisiones Alcance 1-Combustion fija',str("%.1f" % np.float_(emissions_scope1_fija))+' kg CO2-eq')
 
     #with col2:
-        #st.metric('Emisiones Alcance 1-Combustion movil',str("%.1f" % np.float_(emissions_scope1_movil))+' CO2-eq')
+        #st.metric('Emisiones Alcance 1-Combustion movil',str("%.1f" % np.float_(emissions_scope1_movil))+' kg CO2-eq')
 
     #with col3:
-        #st.metric('Emisiones Alcance 2',str("%.1f" % np.float_(emissions_scope2))+' CO2-eq')
+        #st.metric('Emisiones Alcance 2',str("%.1f" % np.float_(emissions_scope2))+' kg CO2-eq')
 
     st.metric('Costo total de energia',str("%.1f" % np.float_(cost_total))+ ' USD')
         
@@ -99,10 +99,10 @@ with st.expander("3. Descubre cuanto podrias disminuir tus emisiones de carbono 
     col1,col2=st.columns(2)
 
     with col1:
-        st.metric('Emisiones que se pueden reducir',str("%.1f" % np.float_(co2_reduced))+ ' CO2-eq')
+        st.metric('Emisiones que se pueden reducir',str("%.1f" % np.float_(co2_reduced))+ ' kg CO2-eq')
 
     with col2:
-        st.metric('Tus nuevas emisiones de carbono son',str("%.1f" % np.float_(co2_new))+ ' CO2-eq')
+        st.metric('Tus nuevas emisiones de carbono son',str("%.1f" % np.float_(co2_new))+ ' kg CO2-eq')
 
     
     cost_reduced=cost_total*0.1
