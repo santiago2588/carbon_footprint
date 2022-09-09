@@ -1,9 +1,9 @@
 import streamlit as st
 from PIL import Image
 
-st.markdown("# Instrucciones")
+st.markdown("# ℹ Instrucciones")
 
-with st.expander("Qué es la huella de carbono y cómo se calcula?"):
+with st.expander("Qué es la huella de carbono y cómo se calcula? ❓"):
     
     st.markdown("#### La huella de carbono representa las emisiones de los gases de efecto invernadero debido al consumo de combustibles de origen fósil,\
                 (por ejemplo, la gasolina o fuel oil) y al consumo de electricidad en las operaciones industriales.")
@@ -21,7 +21,7 @@ with st.expander("Qué es la huella de carbono y cómo se calcula?"):
     st.image(image1)
     
 
-with st.expander('Para que sirve AUCAF?'):
+with st.expander('Para que sirve AUCAF? ❓'):
     
     st.markdown("""
     ### AUCAF es una herramienta digital que permite calcular la huella de carbono en las operaciones industriales, y los costos de energía asociados""")
