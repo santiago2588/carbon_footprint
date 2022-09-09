@@ -100,6 +100,9 @@ with st.expander("3. Descubre cuanto podrias disminuir tus emisiones de carbono 
     co2_reduced=emissions_total*0.1
     co2_new=emissions_total*0.9
 
+    #se puede considerar que un árbol almacena unos 167 kg de CO2 al año, o 1 tonelada de CO2 al año para 6 árboles maduros https://climate.selectra.com/es/actualidad/co2-arbol
+    arboles=co2_reduced/167
+
     col1,col2=st.columns(2)
 
     with col1:
@@ -108,6 +111,7 @@ with st.expander("3. Descubre cuanto podrias disminuir tus emisiones de carbono 
     with col2:
         st.metric('Tus nuevas emisiones de carbono son',str("%.1f" % np.float_(co2_new))+ ' kg CO2-eq')
 
+    st.markdown('Tu reduccion de emisiones equivalen a que siembres',str("%.1f" % np.float_(arboles))+ ' arboles'')
     
     cost_reduced=cost_total*0.1
     cost_new=cost_total*0.9
