@@ -93,8 +93,8 @@ with st.expander('2. Visualiza las emisiones de carbono de tu planta y los costo
 
 with st.expander("3. Descubre cuanto podrias disminuir tus emisiones de carbono y tus costos de energia con nuestra tecnologia"):      
 
-    co2_reduced=emissions_total*0.2
-    co2_new=emissions_total*0.8
+    co2_reduced=emissions_total*0.1
+    co2_new=emissions_total*0.9
 
     col1,col2=st.columns(2)
 
@@ -105,8 +105,8 @@ with st.expander("3. Descubre cuanto podrias disminuir tus emisiones de carbono 
         st.metric('Tus nuevas emisiones de carbono son',str("%.1f" % np.float_(co2_new))+ ' CO2-eq')
 
     
-    cost_reduced=cost_total*0.2
-    cost_new=cost_total*0.8
+    cost_reduced=cost_total*0.1
+    cost_new=cost_total*0.9
 
     col1,col2=st.columns(2)
 
