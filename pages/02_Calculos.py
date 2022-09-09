@@ -111,7 +111,7 @@ with st.expander("3. Descubre cuanto podrias disminuir tus emisiones de carbono 
     with col2:
         st.metric('Tus nuevas emisiones de carbono son',str("%.1f" % np.float_(co2_new))+ ' kg CO2-eq')
 
-    st.markdown('Tu reduccion de emisiones equivalen a que siembres',str("%.1f" % np.float_(arboles))+ ' arboles'')
+    st.markdown('Tu reduccion de emisiones equivalen a que siembres',str("%.1f" % np.float_(arboles))+ ' arboles')
     
     cost_reduced=cost_total*0.1
     cost_new=cost_total*0.9
