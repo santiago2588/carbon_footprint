@@ -100,7 +100,7 @@ with st.expander("3. Descubre cuanto podrias disminuir tus emisiones de carbono 
     co2_reduced=emissions_total*0.1
     co2_new=emissions_total*0.9
 
-    #se puede considerar que un árbol almacena unos 167 kg de CO2 al año, o 1 tonelada de CO2 al año para 6 árboles maduros https://climate.selectra.com/es/actualidad/co2-arbol
+    #Se asume que un árbol almacena unos 167 kg de CO2 al año https://climate.selectra.com/es/actualidad/co2-arbol
     arboles=co2_reduced/167
 
     col1,col2=st.columns(2)
