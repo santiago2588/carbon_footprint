@@ -36,7 +36,7 @@ with st.expander('1. Selecciona las fuentes de energia que utilizas en tu planta
     mask_fuels = df['fuel_name'].isin(fuel_list)
     df = df[mask_fuels]
     fuel_data=df[['fuel_name','consumption_unit','cost_per_unit']]
-    fuel_data=fuel_data.rename(columns={'fuel_name':'Fuente de energia','consumption_unit':'Unidad consumo de energia','cost_per_unit':'Costo por unidad de energia'})
+    fuel_data=fuel_data.rename(columns={'fuel_name':'Fuente de energia','consumption_unit':'Unidad consumo de energia','cost_per_unit':'Costo USD por unidad de energia '})
     st.dataframe(fuel_data)
 
    
@@ -75,7 +75,10 @@ with st.expander('2. Visualiza las emisiones de carbono de tu planta y los costo
 
     st.dataframe(results)
 
-    st.metric('Total emisiones de carbono',str("%.1f" % np.float_(emissions_total))+ ' kg CO2-eq')
+    col1,col2=st.columns(2)
+
+    with col1:
+        st.metric('Total emisiones de carbono',str("%.1f" % np.float_(emissions_total))+ ' kg CO2-eq')
 
     #col1,col2,col3=st.columns(3)
 
@@ -88,7 +91,8 @@ with st.expander('2. Visualiza las emisiones de carbono de tu planta y los costo
     #with col3:
         #st.metric('Emisiones Alcance 2',str("%.1f" % np.float_(emissions_scope2))+' kg CO2-eq')
 
-    st.metric('Costo total de energia',str("%.1f" % np.float_(cost_total))+ ' USD')
+    with col2:
+        st.metric('Costo total de energia',str("%.1f" % np.float_(cost_total))+ ' USD')
         
 
 with st.expander("3. Descubre cuanto podrias disminuir tus emisiones de carbono y tus costos de energia con nuestra tecnologia"):      
