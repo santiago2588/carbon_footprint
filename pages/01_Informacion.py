@@ -1,7 +1,7 @@
 import streamlit as st
 from PIL import Image
 
-st.markdown("# Instrucciones")
+st.markdown("# Informacion")
 
 with st.expander("Qué es la huella de carbono y cómo se calcula❓"):
     
