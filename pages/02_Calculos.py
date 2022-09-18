@@ -26,7 +26,7 @@ df2=[]
 df3=[]
 consumption_list=[]
 
-with st.expander('1. Selecciona las fuentes de energia que utilizas en tu planta y los consumos en las unidades correspondientes que se muestran en la tabla'):
+with st.expander('1. Selecciona las fuentes de energia que utilizas en tu planta e ingresa los consumos en las unidades correspondientes que se muestran en la tabla'):
     
     #Obtener listado de combustibles
     fuels=df['fuel_name']
