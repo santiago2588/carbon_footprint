@@ -74,6 +74,7 @@ with st.expander('1. Selecciona las fuentes de energia que utilizas en tu planta
     cost.columns=['Costo energia USD']
 
     results=pd.concat([fuel_name,co2,scope,cost],axis='columns')
+    results.set_index('Fuente energia',inplace=True)
 
     emissions_scope1_fija=results.loc[results['Alcance emisiones']=='1_combustion_fija','Emisiones kg CO2-eq'].sum()
     emissions_scope1_movil=results.loc[results['Alcance emisiones']=='1_combustion_movil','Emisiones kg CO2-eq'].sum()
@@ -104,7 +105,7 @@ with st.expander('2. Calcula las emisiones de carbono de tu planta y los costos 
         st.metric('Costo total de energia',str("%.1f" % np.float_(cost_total))+ ' USD')
 
     if st.button('Ver detalle'):
-        st.dataframe(results.set_index('Fuente energia',inplace=True))
+        st.dataframe(results)
 
 with st.expander("3. Descubre cuanto podrias disminuir tus emisiones de carbono y tus costos de energia con nuestra tecnologia"):      
 
