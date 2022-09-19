@@ -42,7 +42,7 @@ with st.expander('1. Selecciona las fuentes de energia que utilizas en tu planta
    
     #Obtener listado de consumos
     for i in fuel_list, :
-        consumption=st.number_input("CONSUMO "+ str(i)),key=i)
+        consumption=st.number_input("CONSUMO "+ str(i),key=i)
         consumption_list.append(consumption)
 
     #Prueba de la funcion
