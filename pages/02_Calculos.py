@@ -73,7 +73,8 @@ with st.expander('1. Selecciona las fuentes de energia que utilizas en tu planta
     cost=pd.DataFrame(df3).transpose().reset_index(drop=True)
     cost.columns=['Costo energia USD']
 
-    results=pd.concat([fuel_name,co2,scope,cost],axis='columns',index=False)
+    results=pd.concat([fuel_name,co2,scope,cost],axis='columns')
+    results=pd.DataFrame(results,index=False)
 
     emissions_scope1_fija=results.loc[results['Alcance emisiones']=='1_combustion_fija','Emisiones kg CO2-eq'].sum()
     emissions_scope1_movil=results.loc[results['Alcance emisiones']=='1_combustion_movil','Emisiones kg CO2-eq'].sum()
