@@ -48,7 +48,7 @@ with st.expander('1. Selecciona las fuentes de energia que utilizas en tu planta
     fuel_data=df[['fuel_name','consumption_unit','cost_per_unit','emission_factor']]
     fuel_data=fuel_data.rename(columns={'fuel_name':'Fuente de energia','consumption_unit':'Unidad consumo de energia','cost_per_unit':'Costo USD por unidad de energia','emission_factor':'Factor de emision, kg CO2-eq/unidad energia'})
     fuel_data.set_index('Fuente de energia',inplace=True)
-    st.dataframe(fuel_data)
+    #st.dataframe(fuel_data)
 
    
     #Obtener listado de consumos
