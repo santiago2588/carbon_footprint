@@ -93,7 +93,7 @@ with st.expander('2. Visualiza las emisiones de carbono de tu planta y los costo
     with col2:
         st.metric('Costo total de energia',str("%.1f" % np.float_(cost_total))+ ' USD')
 
-    if st.button('Ver detalle'):
+    if st.expander('Ver detalle'):
         st.dataframe(results)
 
 with st.expander("3. Descubre cuanto podrias disminuir tus emisiones de carbono y tus costos de energia con nuestra tecnologia"):      
