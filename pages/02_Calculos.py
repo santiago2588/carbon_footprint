@@ -43,7 +43,7 @@ with st.expander('1. Selecciona las fuentes de energia que utilizas en tu planta
     #Obtener listado de consumos
     for i in fuel_list:
         fuel_unit=df.query("fuel_name==@i")['consumption_unit']
-        consumption=st.number_input("CONSUMO "+ str(i)+ fuel_unit[1],key=i)
+        consumption=st.number_input("CONSUMO "+ str(i)+ str(fuel_unit),key=i)
         consumption_list.append(consumption)
 
     #Prueba de la funcion
