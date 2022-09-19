@@ -17,7 +17,7 @@ def emission(fuel,consumption):
     scope = df.query("fuel_name==@fuel")['scope']
     co2=consumption*heat_content*emission_factor
     cost=consumption*fuel_cost
-    return fuel_name,scope,co2,cost,fuel_unit
+    return fuel_name,scope,co2,cost
 
 #Dataframes para guardar los resultados
 df0=[]
