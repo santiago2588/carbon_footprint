@@ -17,7 +17,7 @@ def emission(fuel,consumption):
     scope = df.query("fuel_name==@fuel")['scope']
     co2=consumption*heat_content*emission_factor
     cost=consumption*fuel_cost
-    return fuel_name,scope,co2,cost
+    return fuel_name,scope,co2,cost,fuel_unit
 
 #Dataframes para guardar los resultados
 df0=[]
@@ -41,8 +41,8 @@ with st.expander('1. Selecciona las fuentes de energia que utilizas en tu planta
 
    
     #Obtener listado de consumos
-    for i in fuel_list:
-        consumption=st.number_input("CONSUMO "+ str(i),key=i)
+    for i in fuel_list, :
+        consumption=st.number_input("CONSUMO "+ str(i) +str(fuel_data['Unidad consumo de energia']),key=i)
         consumption_list.append(consumption)
 
     #Prueba de la funcion
