@@ -26,7 +26,7 @@ df2=[]
 df3=[]
 consumption_list=[]
 
-with st.expander('1. Selecciona las fuentes de energia que utilizas en tu planta e ingresa los consumos en las unidades correspondientes que se muestran en la tabla'):
+with st.expander('1. Selecciona las fuentes de energia que utilizas en tu planta e ingresa los consumos en las unidades correspondientes'):
     
     #Obtener listado de combustibles
     fuels=df['fuel_name']
@@ -37,7 +37,7 @@ with st.expander('1. Selecciona las fuentes de energia que utilizas en tu planta
     df = df[mask_fuels]
     fuel_data=df[['fuel_name','consumption_unit','cost_per_unit']]
     fuel_data=fuel_data.rename(columns={'fuel_name':'Fuente de energia','consumption_unit':'Unidad consumo de energia','cost_per_unit':'Costo USD por unidad de energia '})
-    st.dataframe(fuel_data)
+    #st.dataframe(fuel_data)
 
    
     #Obtener listado de consumos
