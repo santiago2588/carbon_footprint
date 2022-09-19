@@ -82,7 +82,7 @@ with st.expander('1. Selecciona las fuentes de energia que utilizas en tu planta
     emissions_total=np.sum(results['Emisiones kg CO2-eq'])
     cost_total=np.sum(results['Costo energia USD'])
 
-with st.expander('2. Visualiza las emisiones de carbono de tu planta y los costos de energia'):
+with st.expander('2. Calcula las emisiones de carbono de tu planta y los costos de energia'):
 
     col1,col2=st.columns(2)
 
@@ -104,7 +104,7 @@ with st.expander('2. Visualiza las emisiones de carbono de tu planta y los costo
         st.metric('Costo total de energia',str("%.1f" % np.float_(cost_total))+ ' USD')
 
     if st.button('Ver detalle'):
-        st.dataframe(results)
+        st.dataframe(results(index=False))
 
 with st.expander("3. Descubre cuanto podrias disminuir tus emisiones de carbono y tus costos de energia con nuestra tecnologia"):      
 
