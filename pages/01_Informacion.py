@@ -2,13 +2,13 @@ import streamlit as st
 from PIL import Image
 
 #Codigo para eliminar el boton de menu y logo de streamlit
-hide_menu_style = """
-        <style>
-        #MainMenu {visibility: hidden; }
-        footer {visibility: hidden;}
-        </style>
-        """
-st.markdown(hide_menu_style, unsafe_allow_html=True)
+#hide_menu_style = """
+#        <style>
+#        #MainMenu {visibility: hidden; }
+#        footer {visibility: hidden;}
+#        </style>
+#        """
+#st.markdown(hide_menu_style, unsafe_allow_html=True)
 
 st.markdown("# Informacion")
 
