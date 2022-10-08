@@ -49,7 +49,7 @@ if file_upload is not None:
     #Prueba de la funcion
     fuel_name,scope,co2,cost=emission(fuel_list,consumption_list)
 
-    df0.append(fuel_list)
+    df0.append(fuel_name)
     df1.append(co2)
     df2.append(scope)
     df3.append(cost)
