@@ -14,7 +14,7 @@ import pandas as pd
 
 st.markdown("# Calculos para varios equipos: por favor, carga el archivo CSV con los consumos de energia de los equipos de tu planta")
 
-file_upload = st.file_uploader("Upload csv file for predictions", type=["csv"])
+file_upload = st.file_uploader("Carga el archivo csv", type=["csv"])
 
 df=pd.read_csv("Databases/emission factors demo.csv")
 df_equip=pd.read_csv("Databases/equipment list demo.csv")
@@ -42,11 +42,11 @@ df5=[]
 #Obtener listado de procesos, equipos, combustibles, y consumos
 process=df_equip['process_id']
 equipment=df_equip['equipment_id']
-fuels=df_equip['fuel_name']
-consumption=df_equip['consumption']
+fuel_list=df_equip['fuel_name']
+consumption_list=df_equip['consumption']
 
 #Prueba de la funcion
-fuel_name,scope,co2,cost=emission(fuels,consumption)
+fuel_name,scope,co2,cost=emission(fuel_list,consumption_list)
 
 df0.append(fuel_name)
 df1.append(co2)
@@ -73,11 +73,5 @@ results.set_index('ID proceso',inplace=True)
 st.dataframe(results)
 
 
-emissions_scope1_fija=results.loc[results['Alcance emisiones']=='1_combustion_fija','Emisiones kg CO2-eq'].sum()
-emissions_scope1_movil=results.loc[results['Alcance emisiones']=='1_combustion_movil','Emisiones kg CO2-eq'].sum()
-emissions_scope2=results.loc[results['Alcance emisiones']=='2_electricidad','Emisiones kg CO2-eq'].sum()
-
-emissions_total=np.sum(results['Emisiones kg CO2-eq'])
-cost_total=np.sum(results['Costo energia USD'])
 
 
