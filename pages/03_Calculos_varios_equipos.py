@@ -40,10 +40,10 @@ df4=[]
 df5=[]
 
 #Obtener listado de procesos, equipos, combustibles, y consumos
-process=df_equip['process_id']
-equipment=df_equip['equipment_id']
-fuel_list=df_equip['fuel_name']
-consumption_list=df_equip['consumption']
+process_list=df_equip['process_id'].tolist()
+equipment_list=df_equip['equipment_id'].tolist()
+fuel_list=df_equip['fuel_name'].tolist()
+consumption_list=df_equip['consumption'].tolist()
 
 #Prueba de la funcion
 fuel_name,scope,co2,cost=emission(fuel_list,consumption_list)
@@ -52,8 +52,8 @@ df0.append(fuel_name)
 df1.append(co2)
 df2.append(scope)
 df3.append(cost)
-df4.append(process)
-df5.append(equipment)
+df4.append(process_list)
+df5.append(equipment_list)
 
 process_name=pd.DataFrame(df4)
 process_name.columns=['ID proceso']
