@@ -14,9 +14,9 @@ import pandas as pd
 
 st.markdown("# Calculos para varios equipos: por favor, carga el archivo CSV con los consumos de energia de los equipos de tu planta")
 
-df_equip = st.file_uploader("Carga el archivo csv", type=["csv"])
-
 df=pd.read_csv("Databases/emission factors demo.csv")
+
+df_equip = st.file_uploader("Carga el archivo csv", type=["csv"])
 #df_equip=pd.read_csv("Databases/equipment list demo.csv")
 
 #Calculo de las emisiones de carbono
@@ -68,9 +68,10 @@ scope.columns=['Alcance emisiones']
 cost=pd.DataFrame(df3).transpose().reset_index(drop=True)
 cost.columns=['Costo energia USD']
 
-results=pd.concat([process_name,equipment_name,fuel_name,co2,scope,cost],axis='columns')
-results.set_index('ID proceso',inplace=True)
-st.dataframe(results)
+if df_equip is not None:
+    results=pd.concat([process_name,equipment_name,fuel_name,co2,scope,cost],axis='columns')
+    results.set_index('ID proceso',inplace=True)
+    st.dataframe(results)
 
 
 
