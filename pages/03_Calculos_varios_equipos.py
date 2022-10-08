@@ -31,7 +31,7 @@ if df_equip is not None:
         scope = df.query("fuel_name==@fuel")['scope']
         co2=consumption*heat_content*emission_factor
         cost=consumption*fuel_cost
-    return fuel_name,scope,co2,cost
+        return fuel_name,scope,co2,cost
 
     #Dataframes para guardar los resultados
     df0=[]
