@@ -14,10 +14,10 @@ import pandas as pd
 
 st.markdown("# Calculos para varios equipos: por favor, carga el archivo CSV con los consumos de energia de los equipos de tu planta")
 
-file_upload = st.file_uploader("Carga el archivo csv", type=["csv"])
+df_equip = st.file_uploader("Carga el archivo csv", type=["csv"])
 
 df=pd.read_csv("Databases/emission factors demo.csv")
-df_equip=pd.read_csv("Databases/equipment list demo.csv")
+#df_equip=pd.read_csv("Databases/equipment list demo.csv")
 
 #Calculo de las emisiones de carbono
 @st.cache
