@@ -1,0 +1,5 @@
+﻿process_id,equipment_id,fuel_name,consumption,consumption_unit
+Separation,Column,FUEL OIL LIVIANO,1000,gallon
+Separation,Pump,ELECTRICIDAD SISTEMA NACIONAL INTERCONECTADO,1000,kWh
+Packing,Heat exchanger,GAS LICUADO DE PETROLEO (GLP) INDUSTRIAL,1000,gallon
+Packing,Boiler,FUEL OIL No. 6 INDUSTRIAL,1000,gallon
