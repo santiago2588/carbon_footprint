@@ -16,10 +16,11 @@ st.markdown("# Calculos para varios equipos: por favor, carga el archivo CSV con
 
 df=pd.read_csv("Databases/emission factors demo.csv")
 
-df_equip = st.file_uploader("Carga el archivo csv", type=["csv"])
-#df_equip=pd.read_csv("Databases/equipment list demo.csv")
+file_upload = st.file_uploader("Carga el archivo csv", type=["csv"])
 
-if df_equip is not None:
+
+if file_upload is not None:
+    df_equip=pd.read_csv(file_upload)
 
     #Calculo de las emisiones de carbono
     @st.cache
