@@ -23,14 +23,14 @@ if file_upload is not None:
     #Calculo de las emisiones de carbono
     @st.cache
     def emission(fuel,consumption):
-        #fuel_name=df.query("fuel_name==@fuel")['fuel_name']
+        fuel_name=df.query("fuel_name==@fuel")['fuel_name']
         heat_content = df.query("fuel_name==@fuel")['heat_content']
         emission_factor = df.query("fuel_name==@fuel")['emission_factor']
         fuel_cost = df.query("fuel_name==@fuel")['cost_per_unit']
         scope = df.query("fuel_name==@fuel")['scope']
         co2=consumption*heat_content*emission_factor
         cost=consumption*fuel_cost
-        return scope,co2,cost
+        return fuel_name,scope,co2,cost
 
     #Dataframes para guardar los resultados
     df0=[]
@@ -47,7 +47,7 @@ if file_upload is not None:
     consumption_list=df_equip['consumption'].tolist()
 
     #Prueba de la funcion
-    scope,co2,cost=emission(fuel_list,consumption_list)
+    fuel_name,scope,co2,cost=emission(fuel_list,consumption_list)
 
     df0.append(fuel_list)
     df1.append(co2)
