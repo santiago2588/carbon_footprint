@@ -1,5 +1,4 @@
 import streamlit as st
-import numpy as np
 import pandas as pd
 
 #Codigo para eliminar el boton de menu y logo de streamlit
@@ -17,7 +16,6 @@ st.markdown("# Calculos para varios equipos: por favor, carga el archivo CSV con
 df=pd.read_csv("Databases/emission factors demo.csv")
 
 file_upload = st.file_uploader("Carga el archivo csv", type=["csv"])
-
 
 if file_upload is not None:
     df_equip=pd.read_csv(file_upload)
@@ -73,7 +71,7 @@ if file_upload is not None:
 
 
     results=pd.concat([process_name,equipment_name,fuel_name,co2,scope,cost],axis='columns')
-    results.set_index('ID proceso',inplace=True)
+    #results.set_index('ID proceso',inplace=True)
     st.dataframe(results)
 
 
