@@ -40,8 +40,8 @@ df4=[]
 df5=[]
 
 #Obtener listado de procesos, equipos, combustibles, y consumos
-process_list=df_equip['process_id'].tolist()
-equipment_list=df_equip['equipment_id'].tolist()
+process_list=df_equip['process_id']
+equipment_list=df_equip['equipment_id']
 fuel_list=df_equip['fuel_name'].tolist()
 consumption_list=df_equip['consumption'].tolist()
 
