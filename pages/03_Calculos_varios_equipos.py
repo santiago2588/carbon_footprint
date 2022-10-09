@@ -24,16 +24,14 @@ if file_upload is not None:
     #Calculo de las emisiones de carbono
     @st.cache
     def emission(fuel,consumption):
-        process=df_equip.query("fuel_name==@fuel")['process_id']
-        equipment=df_equip.query("fuel_name==@fuel")['equipment_id']
-        fuel_name=df_equip.query("fuel_name==@fuel")['fuel_name']
+        fuel_name=df.query("fuel_name==@fuel")['fuel_name']
         heat_content = df.query("fuel_name==@fuel")['heat_content']
         emission_factor = df.query("fuel_name==@fuel")['emission_factor']
         fuel_cost = df.query("fuel_name==@fuel")['cost_per_unit']
         co2=consumption*heat_content*emission_factor
         scope = df.query("fuel_name==@fuel")['scope']
         cost=consumption*fuel_cost
-        return process,equipment,fuel_name,co2,scope,cost
+        return fuel_name,co2,scope,cost
 
     #Dataframes para guardar los resultados
     df0=[]
@@ -44,16 +42,16 @@ if file_upload is not None:
     df5=[]
 
     #Obtener listado de procesos, equipos, combustibles, y consumos
-    #process_list=df_equip['process_id'].tolist()
-    #equipment_list=df_equip['equipment_id'].tolist()
+    process_list=df_equip['process_id'].tolist()
+    equipment_list=df_equip['equipment_id'].tolist()
     fuel_list=df_equip['fuel_name'].tolist()
     consumption_list=df_equip['consumption'].tolist()
 
     #Prueba de la funcion
-    process,equipment,fuel_name,co2,scope,cost=emission(fuel_list,consumption_list)
+    fuel_name,co2,scope,cost=emission(fuel_list,consumption_list)
 
-    df0.append(process)
-    df1.append(equipment)
+    df0.append(process_list)
+    df1.append(equipment_list)
     df2.append(fuel_name)
     df3.append(co2)
     df4.append(scope)
