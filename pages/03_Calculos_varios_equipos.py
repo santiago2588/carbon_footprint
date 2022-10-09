@@ -50,26 +50,26 @@ if file_upload is not None:
     consumption_list=df_equip['consumption'].tolist()
 
     #Prueba de la funcion
-    fuel_name,process,equipment,scope,co2,cost=emission(fuel_list,consumption_list)
+    process,equipment,fuel_name,co2,scope,cost=emission(fuel_list,consumption_list)
 
-    df0.append(fuel_name)
-    df1.append(co2)
-    df2.append(scope)
-    df3.append(cost)
-    df4.append(process)
-    df5.append(equipment)
+    df0.append(process)
+    df1.append(equipment)
+    df2.append(fuel_name)
+    df3.append(co2)
+    df4.append(scope)
+    df5.append(cost)
 
-    process_name=pd.DataFrame(df4).transpose().reset_index(drop=True)
+    process_name=pd.DataFrame(df0).transpose().reset_index(drop=True)
     process_name.columns=['ID proceso']
-    equipment_name=pd.DataFrame(df5).transpose().reset_index(drop=True)
+    equipment_name=pd.DataFrame(df1).transpose().reset_index(drop=True)
     equipment_name.columns=['ID equipo']
-    fuel_name=pd.DataFrame(df0).transpose().reset_index(drop=True)
+    fuel_name=pd.DataFrame(df2).transpose().reset_index(drop=True)
     fuel_name.columns=['Fuente energia']
-    co2=pd.DataFrame(df1).transpose().reset_index(drop=True)
+    co2=pd.DataFrame(df3).transpose().reset_index(drop=True)
     co2.columns=['Emisiones kg CO2-eq']
-    scope=pd.DataFrame(df2).transpose().reset_index(drop=True)
+    scope=pd.DataFrame(df4).transpose().reset_index(drop=True)
     scope.columns=['Alcance emisiones']
-    cost=pd.DataFrame(df3).transpose().reset_index(drop=True)
+    cost=pd.DataFrame(df5).transpose().reset_index(drop=True)
     cost.columns=['Costo energia USD']
 
 
