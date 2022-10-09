@@ -17,22 +17,23 @@ file_upload = st.file_uploader("Carga el archivo csv", type=["csv"])
 
 if file_upload is not None:
 
-    df=pd.read_csv("Databases/emission factors demo.csv")
     df_equip=pd.read_csv(file_upload)
+
+    df=pd.read_csv("Databases/emission factors demo.csv")
 
     #Calculo de las emisiones de carbono
     @st.cache
     def emission(fuel,consumption):
-        fuel_name=df.query("fuel_name==@fuel")['fuel_name']
+        process=df_equip.query("fuel_name==@fuel")['process_id']
+        equipment=df_equip.query("fuel_name==@fuel")['equipment_id']
+        fuel_name=df_equip.query("fuel_name==@fuel")['fuel_name']
         heat_content = df.query("fuel_name==@fuel")['heat_content']
         emission_factor = df.query("fuel_name==@fuel")['emission_factor']
         fuel_cost = df.query("fuel_name==@fuel")['cost_per_unit']
-        scope = df.query("fuel_name==@fuel")['scope']
-        process=df_equip.query("fuel_name==@fuel")['process_id']
-        equipment=df_equip.query("fuel_name==@fuel")['equipment_id']
         co2=consumption*heat_content*emission_factor
+        scope = df.query("fuel_name==@fuel")['scope']
         cost=consumption*fuel_cost
-        return fuel_name,process,equipment,scope,co2,cost
+        return process,equipment,fuel_name,co2,scope,cost
 
     #Dataframes para guardar los resultados
     df0=[]
