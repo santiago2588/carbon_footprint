@@ -24,12 +24,12 @@ if file_upload is not None:
     #Calculo de las emisiones de carbono
     @st.cache
     def emission(fuel,consumption):
-        fuel_name=df.query("fuel_name==@fuel")['fuel_name']
-        heat_content = df.query("fuel_name==@fuel")['heat_content']
-        emission_factor = df.query("fuel_name==@fuel")['emission_factor']
-        fuel_cost = df.query("fuel_name==@fuel")['cost_per_unit']
+        fuel_name=df.query("fuel_name in @fuel")['fuel_name']
+        heat_content = df.query("fuel_name in @fuel")['heat_content']
+        emission_factor = df.query("fuel_name in @fuel")['emission_factor']
+        fuel_cost = df.query("fuel_name in @fuel")['cost_per_unit']
         co2=consumption*heat_content*emission_factor
-        scope = df.query("fuel_name==@fuel")['scope']
+        scope = df.query("fuel_name in @fuel")['scope']
         cost=consumption*fuel_cost
         return fuel_name,co2,scope,cost
 
