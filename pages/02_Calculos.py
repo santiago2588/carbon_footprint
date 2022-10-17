@@ -47,6 +47,11 @@ with st.expander('1. Selecciona las fuentes de energia que utilizas en tu planta
     container=st.beta_container
     industry_ref=st.checkbox("Usar datos referenciales para una industria mediana")
 
+    if industry_ref:
+        fuel_list=['GAS LICUADO DE PETROLEO (GLP) INDUSTRIAL','FUEL OIL LIVIANO','ELECTRICIDAD SISTEMA NACIONAL INTERCONECTADO']
+        #consumption_list=[100,100,100]
+        #st.write(consumption_list)
+
     # Filtrar dataframe
     mask_fuels = df['fuel_name'].isin(fuel_list)
     df = df[mask_fuels]
@@ -62,10 +67,7 @@ with st.expander('1. Selecciona las fuentes de energia que utilizas en tu planta
         consumption=st.number_input("Consumo "+ str(i)+" en "+fuel_unit,key=i)
         consumption_list.append(consumption)
 
-    if industry_ref:
-        fuel_list=['GAS LICUADO DE PETROLEO (GLP) INDUSTRIAL','FUEL OIL LIVIANO','ELECTRICIDAD SISTEMA NACIONAL INTERCONECTADO']
-        #consumption_list=[100,100,100]
-        #st.write(consumption_list)
+
 
     #Prueba de la funcion
     fuel_name,scope,co2,cost=emission(fuel_list,consumption_list)
