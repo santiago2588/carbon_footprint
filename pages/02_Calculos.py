@@ -64,8 +64,8 @@ with st.expander('1. Selecciona las fuentes de energia que utilizas en tu planta
 
     if industry_ref:
         fuel_list=['GAS LICUADO DE PETROLEO (GLP) INDUSTRIAL','FUEL OIL LIVIANO','ELECTRICIDAD SISTEMA NACIONAL INTERCONECTADO']
-        consumption_list=[100,100,100]
-        st.write(consumption_list)
+        #consumption_list=[100,100,100]
+        #st.write(consumption_list)
 
     #Prueba de la funcion
     fuel_name,scope,co2,cost=emission(fuel_list,consumption_list)
