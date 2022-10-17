@@ -48,7 +48,7 @@ with st.expander('1. Selecciona las fuentes de energia que utilizas en tu planta
     industry_ref=st.checkbox("Usar datos referenciales para una industria mediana")
 
     if industry_ref:
-        fuel_list=container.multiselect("Fuentes de energia",fuels,[['GAS LICUADO DE PETROLEO (GLP) INDUSTRIAL','FUEL OIL LIVIANO','ELECTRICIDAD SISTEMA NACIONAL INTERCONECTADO']])
+        fuel_list=['GAS LICUADO DE PETROLEO (GLP) INDUSTRIAL','FUEL OIL LIVIANO','ELECTRICIDAD SISTEMA NACIONAL INTERCONECTADO']
 
     # Filtrar dataframe
     mask_fuels = df['fuel_name'].isin(fuel_list)
