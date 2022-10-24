@@ -41,15 +41,15 @@ with st.expander('1. Selecciona las fuentes de energia que utilizas en tu planta
     container=st.beta_container
     industry_ref=st.checkbox("Usar datos referenciales para una industria mediana")
 
-    if industry_ref:
-        fuel_list=['GAS LICUADO DE PETROLEO (GLP) INDUSTRIAL','FUEL OIL LIVIANO','ELECTRICIDAD SISTEMA NACIONAL INTERCONECTADO']
-    #consumption_list=[100,100,100]
-    #st.write(consumption_list)
-
     #Obtener listado de combustibles
     fuels=df['fuel_name']
 
     fuel_list=st.multiselect('Fuentes de energia',fuels)
+
+    if industry_ref:
+        fuel_list=['GAS LICUADO DE PETROLEO (GLP) INDUSTRIAL','FUEL OIL LIVIANO','ELECTRICIDAD SISTEMA NACIONAL INTERCONECTADO']
+    #consumption_list=[100,100,100]
+    #st.write(consumption_list)
 
     # Filtrar dataframe
     mask_fuels = df['fuel_name'].isin(fuel_list)
