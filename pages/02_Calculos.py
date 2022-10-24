@@ -39,7 +39,7 @@ consumption_list=[]
 with st.expander('1. Selecciona las fuentes de energia que utilizas en tu planta e ingresa los consumos en las unidades correspondientes'):
 
     container=st.beta_container
-    industry_ref=st.checkbox("Usar datos referenciales para una industria mediana")
+    industry_ref=st.checkbox("Usar fuentes de energía más utilizadas en la industria")
 
     #Obtener listado de combustibles
     fuels=df['fuel_name']
@@ -64,9 +64,9 @@ with st.expander('1. Selecciona las fuentes de energia que utilizas en tu planta
     for i in fuel_list:
         fuel_unit=df.query("fuel_name==@i")['consumption_unit'].to_string(index=False)
         if industry_ref:
-            consumption=st.number_input("Consumo "+ str(i)+" en "+fuel_unit,value=100,key=i)
+            consumption=st.slider("Consumo "+ str(i)+" en "+fuel_unit,value=100,key=i)
         else:
-            consumption=st.number_input("Consumo "+ str(i)+" en "+fuel_unit,key=i)
+            consumption=st.slider("Consumo "+ str(i)+" en "+fuel_unit,key=i)
 
         consumption_list.append(consumption)
 
