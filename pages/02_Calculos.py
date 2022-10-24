@@ -38,13 +38,13 @@ consumption_list=[]
 
 with st.expander('1. Selecciona las fuentes de energia que utilizas en tu planta e ingresa los consumos en las unidades correspondientes'):
 
-    container=st.beta_container
-    industry_ref=st.checkbox("Usar fuentes de energía más utilizadas en la industria")
-
     #Obtener listado de combustibles
     fuels=df['fuel_name']
 
     fuel_list=st.multiselect('Fuentes de energia',fuels)
+
+    container=st.beta_container
+    industry_ref=st.checkbox("Usar fuentes de energía más utilizadas en la industria")
 
     if industry_ref:
         fuel_list=['GAS LICUADO DE PETROLEO (GLP) INDUSTRIAL','FUEL OIL LIVIANO','ELECTRICIDAD SISTEMA NACIONAL INTERCONECTADO']
