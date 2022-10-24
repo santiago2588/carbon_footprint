@@ -48,7 +48,7 @@ with st.expander('1. Selecciona las fuentes de energia que utilizas en tu planta
 
     if industry_ref:
         fuel_list=['GAS LICUADO DE PETROLEO (GLP) INDUSTRIAL','FUEL OIL LIVIANO','ELECTRICIDAD SISTEMA NACIONAL INTERCONECTADO']
-    #consumption_list=[100,100,100]
+        consumption_ref={'GAS LICUADO DE PETROLEO (GLP) INDUSTRIAL':10,'FUEL OIL LIVIANO':100,'ELECTRICIDAD SISTEMA NACIONAL INTERCONECTADO':1000}
     #st.write(consumption_list)
 
     # Filtrar dataframe
@@ -63,8 +63,9 @@ with st.expander('1. Selecciona las fuentes de energia que utilizas en tu planta
     #Obtener listado de consumos
     for i in fuel_list:
         fuel_unit=df.query("fuel_name==@i")['consumption_unit'].to_string(index=False)
+
         if industry_ref:
-            consumption=st.slider("Consumo "+ str(i)+" en "+fuel_unit,min_value=0,max_value=1000, value=100,key=i)
+            consumption=st.slider("Consumo "+ str(i)+" en "+fuel_unit,min_value=0,max_value=1000, value=consumption_ref,key=i)
         else:
             consumption=st.slider("Consumo "+ str(i)+" en "+fuel_unit,min_value=0,max_value=1000, value=100,key=i)
 
