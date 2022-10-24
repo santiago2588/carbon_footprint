@@ -83,8 +83,6 @@ with st.expander('1. Selecciona las fuentes de energia que utilizas en tu planta
 
     fuel_name=pd.DataFrame(df0).transpose().reset_index(drop=True)
     fuel_name.columns=['Fuente energia']
-    consumption_value=pd.DataFrame(consumption_list).reset_index(drop=True)
-    consumption_value.columns=['Consumo energia']
     co2=pd.DataFrame(df1).transpose().reset_index(drop=True)
     co2.columns=['Emisiones kg CO2-eq']
     scope=pd.DataFrame(df2).transpose().reset_index(drop=True)
