@@ -1,5 +1,6 @@
 import streamlit as st
 import pandas as pd
+import numpy as np
 
 #Codigo para eliminar el boton de menu y logo de streamlit
 #hide_menu_style = """
@@ -77,6 +78,14 @@ if file_upload is not None:
     #results.set_index('ID proceso',inplace=True)
     st.dataframe(results)
 
+    emissions_total=np.sum(results['Emisiones kg CO2-eq'])
+    cost_total=np.sum(results['Costo energia USD'])
 
+    col1,col2=st.columns(2)
 
+    with col1:
+        st.metric('Total emisiones de carbono',str("%.1f" % np.float_(emissions_total))+ ' kg CO2-eq')
+
+    with col2:
+        st.metric('Costo total de energia',str("%.1f" % np.float_(cost_total))+ ' USD')
 
