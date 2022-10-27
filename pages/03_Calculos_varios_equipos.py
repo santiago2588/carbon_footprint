@@ -18,8 +18,10 @@ file_upload = st.file_uploader("Carga el archivo csv", type=["csv"])
 if file_upload is not None:
 
     df_equip=pd.read_csv(file_upload)
+    df_equip=df_equip.sort_values('fuel_name')
 
     df=pd.read_csv("Databases/emission factors demo.csv")
+
 
     #Calculo de las emisiones de carbono
     @st.cache
