@@ -48,8 +48,7 @@ with st.expander('1. Selecciona las fuentes de energia que utilizas en tu planta
     industry_ref=st.checkbox("Usar fuentes de energía más utilizadas en la industria")
 
     if industry_ref:
-        fuel_list=['FUEL OIL LIVIANO','GAS LICUADO DE PETROLEO (GLP) INDUSTRIAL','ELECTRICIDAD SISTEMA NACIONAL INTERCONECTADO']
-        fuel_list.sort()
+        fuel_list=['ELECTRICIDAD SISTEMA NACIONAL INTERCONECTADO','FUEL OIL LIVIANO','GAS LICUADO DE PETROLEO (GLP) INDUSTRIAL']
         #consumption_ref={'GAS LICUADO DE PETROLEO (GLP) INDUSTRIAL':10,'FUEL OIL LIVIANO':100,'ELECTRICIDAD SISTEMA NACIONAL INTERCONECTADO':1000}
 
     # Filtrar dataframe
