@@ -65,9 +65,9 @@ with st.expander('1. Selecciona las fuentes de energia que utilizas en tu planta
         fuel_unit=df.query("fuel_name==@i")['consumption_unit'].to_string(index=False)
 
         if industry_ref:
-            consumption=st.slider("Consumo "+ str(i)+" en "+fuel_unit,min_value=0,max_value=1000, value=100,key=i)
+            consumption=st.slider("Consumo "+ str(i)+" en "+fuel_unit,min_value=0,max_value=100, value=50,key=i)
         else:
-            consumption=st.slider("Consumo "+ str(i)+" en "+fuel_unit,min_value=0,max_value=1000, value=100,key=i)
+            consumption=st.slider("Consumo "+ str(i)+" en "+fuel_unit,min_value=0,max_value=100, value=50,key=i)
 
         consumption_list.append(consumption)
 
