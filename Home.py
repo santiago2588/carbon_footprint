@@ -6,7 +6,6 @@ Created on Sun Aug 14 18:19:54 2022
 """
 
 import streamlit as st
-import plotly.express as px
 
 st.set_page_config(layout="wide",page_title="AUCAF",page_icon="🌿")
 
