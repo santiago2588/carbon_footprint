@@ -1,7 +1,7 @@
-import streamlit as st
-import numpy as np
 import pandas as pd
 import plotly.express as px
+import numpy as np
+import streamlit as st
 
 #Codigo para eliminar el boton de menu y logo de streamlit
 #hide_menu_style = """
