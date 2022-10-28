@@ -1,6 +1,7 @@
 import streamlit as st
 import numpy as np
 import pandas as pd
+import plotly.express as px
 
 #Codigo para eliminar el boton de menu y logo de streamlit
 #hide_menu_style = """
@@ -91,7 +92,7 @@ with st.expander('1. Selecciona las fuentes de energia que utilizas en tu planta
     cost.columns=['Costo energia USD']
 
     results=pd.concat([fuel_name,co2,scope,cost],axis='columns')
-    results.set_index('Fuente energia',inplace=True)
+    #results.set_index('Fuente energia',inplace=True)
 
     emissions_scope1_fija=results.loc[results['Alcance emisiones']=='1_combustion_fija','Emisiones kg CO2-eq'].sum()
     emissions_scope1_movil=results.loc[results['Alcance emisiones']=='1_combustion_movil','Emisiones kg CO2-eq'].sum()
@@ -124,6 +125,9 @@ with st.expander('2. Calcula las emisiones de carbono de tu planta y los costos 
     st.write('Detalle emisiones y costos')
 
     st.dataframe(results)
+
+    fig_results = px.pie(results, names='Fuente energia', values='Emisiones kg CO2-eq', hover_data=['Costo energia USD'], title='Contribución fuentes de energía')
+    st.plotly_chart(fig_results, use_container_width=True)
 
 with st.expander("3. Descubre cuanto podrias disminuir tus emisiones de carbono y tus costos de energia con nuestra tecnologia"):      
 
