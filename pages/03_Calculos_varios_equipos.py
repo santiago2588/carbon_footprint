@@ -1,7 +1,7 @@
 import streamlit as st
 import pandas as pd
 import numpy as np
-#import plotly.express as px
+import plotly.express as px
 
 #Codigo para eliminar el boton de menu y logo de streamlit
 #hide_menu_style = """
@@ -90,3 +90,12 @@ if file_upload is not None:
     with col2:
         st.metric('Costo total de energia',str("%.1f" % np.float_(cost_total))+ ' USD')
 
+
+    fig_results = px.pie(results, names='Fuente energia', values='Emisiones kg CO2-eq', hover_data=['Costo energia USD'],title='Contribución fuentes de energía')
+    st.plotly_chart(fig_results, use_container_width=True)
+
+    fig_process = px.pie(results, names='ID proceso', values='Emisiones kg CO2-eq', hover_data=['Costo energia USD'],title='Contribución procesos')
+    st.plotly_chart(fig_process, use_container_width=True)
+
+    fig_equipment = px.pie(results, names='ID equipo', values='Emisiones kg CO2-eq', hover_data=['Costo energia USD'],title='Contribución equipos')
+    st.plotly_chart(fig_equipment, use_container_width=True)
