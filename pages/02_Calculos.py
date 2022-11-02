@@ -129,7 +129,7 @@ with st.expander('2. Calcula las emisiones de carbono de tu planta y los costos 
     fig_results = px.pie(results, names='Fuente energia', values='Emisiones kg CO2-eq', hover_data=['Costo energia USD'], title='Contribución fuentes de energía')
     st.plotly_chart(fig_results, use_container_width=True)
 
-with st.expander("3. Descubre cuánto podrias disminuir tus emisiones de carbono y tus costos de energia con nuestra tecnologia"):
+with st.expander("3. Descubre cuánto podrías disminuir tus emisiones de carbono y tus costos de energía con nuestra tecnologia"):
 
     co2_reduced=emissions_total*0.1
     co2_new=emissions_total*0.9
