@@ -95,7 +95,7 @@ if file_upload is not None:
         st.plotly_chart(fig_results, use_container_width=True)
 
     with st.expander('Contribucion procesos'):
-        fig_process = px.pie(results, names='ID proceso', values=['Emisiones kg CO2-eq','Costo energia USD'])
+        fig_process = px.pie(results, names='ID proceso', values='Emisiones kg CO2-eq', hover_data=['Costo energia USD'])
         st.plotly_chart(fig_process, use_container_width=True)
 
     with st.expander('Contribucion equipos'):
