@@ -128,7 +128,7 @@ with st.expander('2. Calcula las emisiones de carbono de tu planta y los costos 
     st.dataframe(results)
 
     fig_results = go.Figure(data=[go.Pie(labels=results['Fuente energia'],values=results['Emisiones kg CO2-eq'])])
-    fig_results.update_traces(hover_info=results['Costo energia USD'])
+    #fig_results.update_traces(hover_info=results['Costo energia USD'])
     #names='Fuente energia', values='Emisiones kg CO2-eq', hover_data=['Costo energia USD'],title='Contribución fuentes de energía')
     st.plotly_chart(fig_results, use_container_width=True)
 
