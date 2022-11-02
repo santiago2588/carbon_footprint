@@ -1,5 +1,5 @@
 import pandas as pd
-#import plotly.express as px
+import plotly.express as px
 import numpy as np
 import streamlit as st
 
@@ -126,8 +126,8 @@ with st.expander('2. Calcula las emisiones de carbono de tu planta y los costos 
 
     st.dataframe(results)
 
-    #fig_results = px.pie(results, names='Fuente energia', values='Emisiones kg CO2-eq', hover_data=['Costo energia USD'], title='Contribución fuentes de energía')
-    #st.plotly_chart(fig_results, use_container_width=True)
+    fig_results = px.pie(results, names='Fuente energia', values='Emisiones kg CO2-eq', hover_data=['Costo energia USD'], title='Contribución fuentes de energía')
+    st.plotly_chart(fig_results, use_container_width=True)
 
 with st.expander("3. Descubre cuánto podrias disminuir tus emisiones de carbono y tus costos de energia con nuestra tecnologia"):
 
