@@ -126,7 +126,7 @@ with st.expander('2. Calcula las emisiones de carbono de tu planta y los costos 
 
     st.dataframe(results)
 
-    fig_results = px.pie(results, names='Fuente energia', values='Emisiones kg CO2-eq', hover_name='Fuente energia', hover_data=['Costo energia USD','Alcance emisiones'], title='Contribución fuentes de energía')
+    fig_results = px.pie(results, names='Fuente energia', values='Emisiones kg CO2-eq', hover_data=['Costo energia USD','Alcance emisiones'],labels={'Costo energia USD':'Costo energia, USD','Alcance emisiones':'Alcance emisiones'},title='Contribución fuentes de energía')
     st.plotly_chart(fig_results, use_container_width=True)
 
 with st.expander("3. Descubre cuánto podrías disminuir tus emisiones de carbono y tus costos de energía con nuestra tecnologia"):
