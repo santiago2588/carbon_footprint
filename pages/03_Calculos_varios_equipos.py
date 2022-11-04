@@ -5,13 +5,13 @@ import plotly.express as px
 import plotly.graph_objects as go
 
 #Codigo para eliminar el boton de menu y logo de streamlit
-#hide_menu_style = """
-#        <style>
-#        #MainMenu {visibility: hidden; }
-#        footer {visibility: hidden;}
-#        </style>
-#        """
-#st.markdown(hide_menu_style, unsafe_allow_html=True)
+hide_menu_style = """
+        <style>
+        #MainMenu {visibility: hidden; }
+        footer {visibility: hidden;}
+        </style>
+        """
+st.markdown(hide_menu_style, unsafe_allow_html=True)
 
 
 st.markdown("# Calculos para varios equipos: por favor, carga el archivo CSV con los consumos de energia de los equipos de tu planta")
