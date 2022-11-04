@@ -105,13 +105,13 @@ if file_upload is not None:
 
     with st.expander("Descubre cuánto podrías disminuir tus emisiones de carbono y tus costos de energía con nuestra tecnologia"):
 
-    co2_reduced=emissions_total*0.1
-    co2_new=emissions_total*0.9
+        co2_reduced=emissions_total*0.1
+        co2_new=emissions_total*0.9
 
-    #Se asume que un árbol almacena unos 167 kg de CO2 al año https://climate.selectra.com/es/actualidad/co2-arbol
-    arboles=co2_reduced/167
+        #Se asume que un árbol almacena unos 167 kg de CO2 al año https://climate.selectra.com/es/actualidad/co2-arbol
+        arboles=co2_reduced/167
 
-    col1,col2=st.columns(2)
+        col1,col2=st.columns(2)
 
     with col1:
         st.metric('Emisiones que se pueden reducir',str("%.1f" % np.float_(co2_reduced))+ ' kg CO2-eq')
