@@ -18,7 +18,7 @@ st.markdown("# Calculo batch")
 
 st.markdown("Carga el archivo CSV con los consumos de energia de las areas y equipos de tu planta")
 
-file_upload = st.file_uploader("Carga el archivo csv", type=["csv"])
+file_upload = st.file_uploader("", type=["csv"])
 
 if file_upload is not None:
 
