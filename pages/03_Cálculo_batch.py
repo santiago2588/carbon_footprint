@@ -105,7 +105,7 @@ if file_upload is not None:
         fig_equipment = px.pie(results, names='ID equipo', values='Emisiones kg CO2-eq', hole=0.4, hover_data=['Costo energia USD'])
         st.plotly_chart(fig_equipment, use_container_width=True)
 
-    with st.expander("Descubre cuánto podrías disminuir tus emisiones de carbono y tus costos de energía con nuestra tecnologia"):
+    with st.expander("Descubre cuánto podrías disminuir tus emisiones de carbono y tus costos de energía con AUCAF"):
 
         co2_reduced=emissions_total*0.1
         co2_new=emissions_total*0.9
