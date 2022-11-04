@@ -14,7 +14,7 @@ hide_menu_style = """
 st.markdown(hide_menu_style, unsafe_allow_html=True)
 
 
-st.markdown("# Calculos")
+st.markdown("# Cálculo individual")
 st.write('Por favor, sigue los pasos que se presentan a continuacion.')
 
 df=pd.read_csv("Databases/emission factors demo.csv")
