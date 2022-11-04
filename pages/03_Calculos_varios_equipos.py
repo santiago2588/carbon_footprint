@@ -113,23 +113,23 @@ if file_upload is not None:
 
         col1,col2=st.columns(2)
 
-    with col1:
-        st.metric('Emisiones que se pueden reducir',str("%.1f" % np.float_(co2_reduced))+ ' kg CO2-eq')
+        with col1:
+            st.metric('Emisiones que se pueden reducir',str("%.1f" % np.float_(co2_reduced))+ ' kg CO2-eq')
 
-    with col2:
-        st.metric('Tus nuevas emisiones de carbono son',str("%.1f" % np.float_(co2_new))+ ' kg CO2-eq')
+        with col2:
+            st.metric('Tus nuevas emisiones de carbono son',str("%.1f" % np.float_(co2_new))+ ' kg CO2-eq')
 
-    st.write('Tu reduccion de emisiones equivalen a que siembres',str("%.1f" % np.float_(arboles))+ ' arboles 🌳')
+        st.write('Tu reduccion de emisiones equivalen a que siembres',str("%.1f" % np.float_(arboles))+ ' arboles 🌳')
 
-    cost_reduced=cost_total*0.1
-    cost_new=cost_total*0.9
+        cost_reduced=cost_total*0.1
+        cost_new=cost_total*0.9
 
-    col1,col2=st.columns(2)
+        col1,col2=st.columns(2)
 
-    with col1:
-        st.metric('Costos de energia que se pueden reducir',str("%.1f" % np.float_(cost_reduced))+ ' USD')
+        with col1:
+            st.metric('Costos de energia que se pueden reducir',str("%.1f" % np.float_(cost_reduced))+ ' USD')
 
-    with col2:
-        st.metric('Tus nuevos costos de energia son',str("%.1f" % np.float_(cost_new))+ ' USD')
+        with col2:
+            st.metric('Tus nuevos costos de energia son',str("%.1f" % np.float_(cost_new))+ ' USD')
 
-    st.success("Felicitaciones, has reducido tus emisiones de carbono y los costos energeticos y ahora tu planta es mas rentable y eficiente!")
+        st.success("Felicitaciones, has reducido tus emisiones de carbono y los costos energeticos y ahora tu planta es mas rentable y eficiente!")
