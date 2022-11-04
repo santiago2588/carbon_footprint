@@ -14,9 +14,9 @@ hide_menu_style = """
 st.markdown(hide_menu_style, unsafe_allow_html=True)
 
 
-st.markdown("# Calculos batch: ")
+st.markdown("# Calculo batch")
 
-st.markdown("Carga el archivo CSV con los consumos de energia de las areas y equipos de tu planta"):
+st.markdown("Carga el archivo CSV con los consumos de energia de las areas y equipos de tu planta")
 
 file_upload = st.file_uploader("Carga el archivo csv", type=["csv"])
 
