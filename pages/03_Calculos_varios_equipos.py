@@ -102,3 +102,34 @@ if file_upload is not None:
     with st.expander('Contribucion equipos'):
         fig_equipment = px.pie(results, names='ID equipo', values='Emisiones kg CO2-eq', hole=0.4, hover_data=['Costo energia USD'])
         st.plotly_chart(fig_equipment, use_container_width=True)
+
+    with st.expander("Descubre cuánto podrías disminuir tus emisiones de carbono y tus costos de energía con nuestra tecnologia"):
+
+    co2_reduced=emissions_total*0.1
+    co2_new=emissions_total*0.9
+
+    #Se asume que un árbol almacena unos 167 kg de CO2 al año https://climate.selectra.com/es/actualidad/co2-arbol
+    arboles=co2_reduced/167
+
+    col1,col2=st.columns(2)
+
+    with col1:
+        st.metric('Emisiones que se pueden reducir',str("%.1f" % np.float_(co2_reduced))+ ' kg CO2-eq')
+
+    with col2:
+        st.metric('Tus nuevas emisiones de carbono son',str("%.1f" % np.float_(co2_new))+ ' kg CO2-eq')
+
+    st.write('Tu reduccion de emisiones equivalen a que siembres',str("%.1f" % np.float_(arboles))+ ' arboles 🌳')
+
+    cost_reduced=cost_total*0.1
+    cost_new=cost_total*0.9
+
+    col1,col2=st.columns(2)
+
+    with col1:
+        st.metric('Costos de energia que se pueden reducir',str("%.1f" % np.float_(cost_reduced))+ ' USD')
+
+    with col2:
+        st.metric('Tus nuevos costos de energia son',str("%.1f" % np.float_(cost_new))+ ' USD')
+
+    st.success("Felicitaciones, has reducido tus emisiones de carbono y los costos energeticos y ahora tu planta es mas rentable y eficiente!")
