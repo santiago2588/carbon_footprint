@@ -24,6 +24,8 @@ st.image(image)
 
 st.write("# Bienvenido al demo de AUCAF: la herramienta digital para el cálculo, monitoreo y reducción de la huella de carbono en la industria")
 
+st.markdown("## Informacion")
+
 with st.expander("Qué es la huella de carbono y cómo se calcula❓"):
 
     st.markdown("#### La huella de carbono representa las emisiones de los gases de efecto invernadero debido al consumo de combustibles de origen fósil,\
