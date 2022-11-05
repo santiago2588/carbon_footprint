@@ -1,8 +1,8 @@
 ﻿process_id,equipment_id,fuel_name,consumption,consumption_unit
-Molienda,Molino,ELECTRICIDAD SISTEMA NACIONAL INTERCONECTADO,10000,kWh
-Molienda,Horno,FUEL OIL No. 6 INDUSTRIAL,150,gallon
-Separacion,Columna destilacion,FUEL OIL LIVIANO,100,gallon
+Molienda,Molino,ELECTRICIDAD SISTEMA NACIONAL INTERCONECTADO,1000,kWh
+Molienda,Horno,FUEL OIL No. 6 INDUSTRIAL,1000,gallon
+Separacion,Columna destilacion,FUEL OIL LIVIANO,1000,gallon
 Separacion,Bomba,ELECTRICIDAD SISTEMA NACIONAL INTERCONECTADO,1000,kWh
-Separacion,Filtro,ELECTRICIDAD SISTEMA NACIONAL INTERCONECTADO,5000,kWh
-Empacado,Intercambiador de calor,GAS LICUADO DE PETROLEO (GLP) INDUSTRIAL,500,gallon
-Empacado,Caldero,FUEL OIL No. 6 INDUSTRIAL,550,gallon
+Separacion,Filtro,ELECTRICIDAD SISTEMA NACIONAL INTERCONECTADO,1000,kWh
+Empacado,Intercambiador de calor,GAS LICUADO DE PETROLEO (GLP) INDUSTRIAL,1000,gallon
+Empacado,Caldero,FUEL OIL No. 6 INDUSTRIAL,1000,gallon
