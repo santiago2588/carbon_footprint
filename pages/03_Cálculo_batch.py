@@ -25,7 +25,7 @@ if file_upload is not None:
     df_equip=pd.read_csv(file_upload)
     df_equip=df_equip.sort_values('fuel_name')
 
-    st.markdown("Tabla de datos:")
+    st.markdown("##Tabla de datos:")
     st.dataframe(df_equip)
 
     df=pd.read_csv("Databases/emission factors demo.csv")
@@ -80,21 +80,22 @@ if file_upload is not None:
     cost=pd.DataFrame(df5).transpose().reset_index(drop=True)
     cost.columns=['Costo energia USD']
 
+    with st.expander("Resultados"):
 
-    results=pd.concat([process_name,equipment_name,fuel_name,co2,scope,cost],axis='columns')
-    #results.set_index('ID proceso',inplace=True)
-    st.dataframe(results)
+        results=pd.concat([process_name,equipment_name,fuel_name,co2,scope,cost],axis='columns')
+        #results.set_index('ID proceso',inplace=True)
+        st.dataframe(results)
 
-    emissions_total=np.sum(results['Emisiones kg CO2-eq'])
-    cost_total=np.sum(results['Costo energia USD'])
+        emissions_total=np.sum(results['Emisiones kg CO2-eq'])
+        cost_total=np.sum(results['Costo energia USD'])
 
-    col1,col2=st.columns(2)
+        col1,col2=st.columns(2)
 
-    with col1:
-        st.metric('Total emisiones de carbono',str("%.1f" % np.float_(emissions_total))+ ' kg CO2-eq')
+        with col1:
+            st.metric('Total emisiones de carbono',str("%.1f" % np.float_(emissions_total))+ ' kg CO2-eq')
 
-    with col2:
-        st.metric('Costo total de energia',str("%.1f" % np.float_(cost_total))+ ' USD')
+        with col2:
+            st.metric('Costo total de energia',str("%.1f" % np.float_(cost_total))+ ' USD')
 
     with st.expander('Contribucion emisiones de carbono'):
 
