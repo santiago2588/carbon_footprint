@@ -24,6 +24,7 @@ if file_upload is not None:
 
     df_equip=pd.read_csv(file_upload)
     df_equip=df_equip.sort_values('fuel_name')
+    st.dataframe(df_equip)
 
     df=pd.read_csv("Databases/emission factors demo.csv")
 
