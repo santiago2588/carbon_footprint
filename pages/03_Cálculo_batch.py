@@ -20,6 +20,8 @@ st.markdown("Carga el archivo CSV con los consumos de energia de las areas y equ
 
 file_upload = st.file_uploader("", type=["csv"])
 
+df=pd.read_csv("Databases/emission factors demo.csv")
+
 if file_upload is not None:
 
     df_equip=pd.read_csv(file_upload)
@@ -29,8 +31,6 @@ if file_upload is not None:
 
     st.markdown("## Tabla de datos")
     st.dataframe(df_equip)
-
-    df=pd.read_csv("Databases/emission factors demo.csv")
 
     #Obtener listado de procesos, equipos, combustibles, y consumos
     process_list=df_equip['process_id'].tolist()
