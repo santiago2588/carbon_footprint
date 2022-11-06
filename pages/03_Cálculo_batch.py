@@ -25,10 +25,10 @@ if file_upload is not None:
     df_equip=pd.read_csv(file_upload)
     df_equip=df_equip.sort_values('fuel_name')
 
-    df_equip_mod=df_equip.rename(columns={'process_id':'ID proceso','equipment_id':'ID equipo','fuel_name':'Fuente energia','consumption':'Consumo','consumption_unit':'Unidad'})
+    #df_equip_mod=df_equip.rename(columns={'process_id':'ID proceso','equipment_id':'ID equipo','fuel_name':'Fuente energia','consumption':'Consumo','consumption_unit':'Unidad'})
 
     st.markdown("## Tabla de datos")
-    st.dataframe(df_equip_mod)
+    st.dataframe(df_equip)
 
     df=pd.read_csv("Databases/emission factors demo.csv")
 
