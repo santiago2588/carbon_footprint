@@ -20,7 +20,7 @@ st.markdown("Carga el archivo CSV con los consumos de energia de las areas y equ
 
 df=pd.read_csv("Databases/emission factors demo.csv")
 
-file_upload = st.file_uploader("", type=["csv"])
+file_upload = st.file_uploader("Archivo", type=["csv"])
 
 if file_upload is not None:
 
