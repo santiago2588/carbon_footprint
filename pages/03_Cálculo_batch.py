@@ -50,14 +50,14 @@ if file_upload is not None:
     @st.cache
     def emission(fuel,consumption):
         for i,j in zip(fuel,consumption):
-            fuel_name=df.loc[df["fuel_name"] == i,'fuel_name']
+            fuel=df.loc[df["fuel_name"] == i,'fuel_name']
             heat_content = df.loc[df["fuel_name"]==i,'heat_content']
             emission_factor = df.loc[df["fuel_name"]==i,'emission_factor']
             fuel_cost = df.loc[df["fuel_name"]==i,'cost_per_unit']
             scope = df.loc[df["fuel_name"]==i,'scope']
             co2=j*heat_content*emission_factor
             cost=j*fuel_cost
-            df0.extend(fuel_name)
+            df0.extend(fuel)
             df1.extend(emission_factor)
             df2.extend(scope)
             df3.extend(fuel_cost)
