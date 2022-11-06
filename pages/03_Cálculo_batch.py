@@ -32,18 +32,11 @@ if file_upload is not None:
 
     df=pd.read_csv("Databases/emission factors demo.csv")
 
-
-    #Calculo de las emisiones de carbono
-    @st.cache
-    def emission(fuel,consumption):
-        fuel_name=df.query("fuel_name in @fuel")['fuel_name']
-        heat_content = df.query("fuel_name in @fuel")['heat_content']
-        emission_factor = df.query("fuel_name in @fuel")['emission_factor']
-        fuel_cost = df.query("fuel_name in @fuel")['cost_per_unit']
-        co2=consumption*heat_content*emission_factor
-        scope = df.query("fuel_name in @fuel")['scope']
-        cost=consumption*fuel_cost
-        return fuel_name,co2,scope,cost
+    #Obtener listado de procesos, equipos, combustibles, y consumos
+    process_list=df_equip['process_id'].tolist()
+    equipment_list=df_equip['equipment_id'].tolist()
+    fuel_list=df_equip['fuel_name'].tolist()
+    consumption_list=df_equip['consumption'].tolist()
 
     #Dataframes para guardar los resultados
     df0=[]
@@ -53,33 +46,43 @@ if file_upload is not None:
     df4=[]
     df5=[]
 
-    #Obtener listado de procesos, equipos, combustibles, y consumos
-    process_list=df_equip['process_id'].tolist()
-    equipment_list=df_equip['equipment_id'].tolist()
-    fuel_list=df_equip['fuel_name'].tolist()
-    consumption_list=df_equip['consumption'].tolist()
+    #Calculo de las emisiones de carbono
+    @st.cache
+    def emission(fuel,consumption):
+        for i,j in zip(fuel,consumption):
+            fuel_name=df.loc[df["fuel_name"] == i,'fuel_name']
+            heat_content = df.loc[df["fuel_name"]==i,'heat_content']
+            emission_factor = df.loc[df["fuel_name"]==i,'emission_factor']
+            fuel_cost = df.loc[df["fuel_name"]==i,'cost_per_unit']
+            scope = df.loc[df["fuel_name"]==i,'scope']
+            co2=j*heat_content*emission_factor
+            cost=j*fuel_cost
+            df0.extend(fuel_name)
+            df1.extend(emission_factor)
+            df2.extend(scope)
+            df3.extend(fuel_cost)
+            df4.extend(co2)
+            df5.extend(cost)
+        return co2
 
     #Prueba de la funcion
-    fuel_name,co2,scope,cost=emission(fuel_list,consumption_list)
+    co2=emission(fuel_list,consumption_list)
 
-    df0.append(process_list)
-    df1.append(equipment_list)
-    df2.append(fuel_name)
-    df3.append(co2)
-    df4.append(scope)
-    df5.append(cost)
-
-    process_name=pd.DataFrame(df0).transpose().reset_index(drop=True)
+    process_name=pd.DataFrame(process_list)
     process_name.columns=['ID proceso']
-    equipment_name=pd.DataFrame(df1).transpose().reset_index(drop=True)
+    equipment_name=pd.DataFrame(equipment_list)
     equipment_name.columns=['ID equipo']
-    fuel_name=pd.DataFrame(df2).transpose().reset_index(drop=True)
+    fuel_name=pd.DataFrame(df0)
     fuel_name.columns=['Fuente energia']
-    co2=pd.DataFrame(df3).transpose().reset_index(drop=True)
+    emission_factor=pd.DataFrame(df1)
+    emission_factor.columns=['Factor de emision']
+    fuel_cost=pd.DataFrame(df3)
+    fuel_cost.columns=['Costo unitario']
+    co2=pd.DataFrame(df4)
     co2.columns=['Emisiones kg CO2-eq']
-    scope=pd.DataFrame(df4).transpose().reset_index(drop=True)
+    scope=pd.DataFrame(df2)
     scope.columns=['Alcance emisiones']
-    cost=pd.DataFrame(df5).transpose().reset_index(drop=True)
+    cost=pd.DataFrame(df5)
     cost.columns=['Costo energia USD']
 
     with st.expander("Resultados"):
