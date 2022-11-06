@@ -63,10 +63,10 @@ if file_upload is not None:
             df3.extend(fuelcost)
             df4.extend(co2emission)
             df5.extend(costfuel)
-        return co2
+        return co2emission
 
     #Prueba de la funcion
-    co2=emission(fuel_list,consumption_list)
+    co2emission=emission(fuel_list,consumption_list)
 
     process_name=pd.DataFrame(process_list)
     process_name.columns=['ID proceso']
