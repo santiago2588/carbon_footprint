@@ -87,7 +87,7 @@ if file_upload is not None:
 
     with st.expander("Resultados"):
 
-        results=pd.concat([process_name,equipment_name,fuel_name,co2,scope,cost],axis='columns')
+        results=pd.concat([process_name,equipment_name,fuel_name,emission_factor,fuel_cost,co2,scope,cost],axis='columns')
         #results.set_index('ID proceso',inplace=True)
 
         emissions_total=np.sum(results['Emisiones kg CO2-eq'])
