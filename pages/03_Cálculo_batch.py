@@ -50,19 +50,19 @@ if file_upload is not None:
     @st.cache
     def emission(fuel,consumption):
         for i,j in zip(fuel,consumption):
-            fuel=df.loc[df["fuel_name"] == i,'fuel_name']
-            heat_content = df.loc[df["fuel_name"]==i,'heat_content']
-            emission_factor = df.loc[df["fuel_name"]==i,'emission_factor']
-            fuel_cost = df.loc[df["fuel_name"]==i,'cost_per_unit']
-            scope = df.loc[df["fuel_name"]==i,'scope']
-            co2=j*heat_content*emission_factor
-            cost=j*fuel_cost
-            df0.extend(fuel)
-            df1.extend(emission_factor)
-            df2.extend(scope)
-            df3.extend(fuel_cost)
-            df4.extend(co2)
-            df5.extend(cost)
+            fuelname=df.loc[df["fuel_name"] == i,'fuel_name']
+            heatcontent = df.loc[df["fuel_name"]==i,'heat_content']
+            emissionfactor = df.loc[df["fuel_name"]==i,'emission_factor']
+            fuelcost = df.loc[df["fuel_name"]==i,'cost_per_unit']
+            scopeemission = df.loc[df["fuel_name"]==i,'scope']
+            co2emission=j*heat_content*emission_factor
+            costfuel=j*fuel_cost
+            df0.extend(fuelname)
+            df1.extend(emissionfactor)
+            df2.extend(scopeemission)
+            df3.extend(fuelcost)
+            df4.extend(co2emission)
+            df5.extend(costfuel)
         return co2
 
     #Prueba de la funcion
