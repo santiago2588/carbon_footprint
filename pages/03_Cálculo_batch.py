@@ -55,8 +55,8 @@ if file_upload is not None:
             emissionfactor = df.loc[df["fuel_name"]==i,'emission_factor']
             fuelcost = df.loc[df["fuel_name"]==i,'cost_per_unit']
             scopeemission = df.loc[df["fuel_name"]==i,'scope']
-            co2emission=j*heat_content*emission_factor
-            costfuel=j*fuel_cost
+            co2emission=j*heatcontent*emissionfactor
+            costfuel=j*fuelcost
             df0.extend(fuelname)
             df1.extend(emissionfactor)
             df2.extend(scopeemission)
