@@ -39,30 +39,30 @@ if file_upload is not None:
     consumption_list=df_equip['consumption'].tolist()
 
     #Dataframes para guardar los resultados
-    df0=pd.DataFrame(columns = range(7))
-    df1=pd.DataFrame(columns = range(7))
-    df2=pd.DataFrame(columns = range(7))
-    df3=pd.DataFrame(columns = range(7))
-    df4=pd.DataFrame(columns = range(7))
-    df5=pd.DataFrame(columns = range(7))
+    df0=[]
+    df1=[]
+    df2=[]
+    df3=[]
+    df4=[]
+    df5=[]
 
     #Calculo de las emisiones de carbono
     @st.cache
     def emission(fuel,consumption):
         for i,j in zip(fuel,consumption):
-            fuelname=df.loc[df["fuel_name"] == i,'fuel_name']
+            fuelname=df.loc[[df["fuel_name"] == i,'fuel_name']]
             heatcontent = df.loc[df["fuel_name"]==i,'heat_content']
             emissionfactor = df.loc[df["fuel_name"]==i,'emission_factor']
             fuelcost = df.loc[df["fuel_name"]==i,'cost_per_unit']
             scopeemission = df.loc[df["fuel_name"]==i,'scope']
             co2emission=j*heatcontent*emissionfactor
             costfuel=j*fuelcost
-            df0.append(fuelname)
-            df1.append(emissionfactor)
-            df2.append(scopeemission)
-            df3.append(fuelcost)
-            df4.append(co2emission)
-            df5.append(costfuel)
+            df0.extend(fuelname)
+            df1.extend(emissionfactor)
+            df2.extend(scopeemission)
+            df3.extend(fuelcost)
+            df4.extend(co2emission)
+            df5.extend(costfuel)
         return co2emission
 
     #Prueba de la funcion
