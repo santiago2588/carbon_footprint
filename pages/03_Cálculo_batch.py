@@ -50,7 +50,7 @@ if file_upload is not None:
     @st.cache
     def emission(fuel,consumption):
         for i,j in zip(fuel,consumption):
-            fuelname=df.loc(df["fuel_name"] == i,'fuel_name')
+            fuelname=df.loc[df["fuel_name"] == i,'fuel_name']
             heatcontent = df.loc[df["fuel_name"]==i,'heat_content']
             emissionfactor = df.loc[df["fuel_name"]==i,'emission_factor']
             fuelcost = df.loc[df["fuel_name"]==i,'cost_per_unit']
