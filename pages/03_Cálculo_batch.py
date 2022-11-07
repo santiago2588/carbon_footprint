@@ -39,12 +39,12 @@ if file_upload is not None:
     consumption_list=df_equip['consumption'].tolist()
 
     #Dataframes para guardar los resultados
-    df0=[None]*7
-    df1=[None]*7
-    df2=[None]*7
-    df3=[None]*7
-    df4=[None]*7
-    df5=[None]*7
+    df0=pd.DataFrame(columns = range(7))
+    df1=pd.DataFrame(columns = range(7))
+    df2=pd.DataFrame(columns = range(7))
+    df3=pd.DataFrame(columns = range(7))
+    df4=pd.DataFrame(columns = range(7))
+    df5=pd.DataFrame(columns = range(7))
 
     #Calculo de las emisiones de carbono
     @st.cache
