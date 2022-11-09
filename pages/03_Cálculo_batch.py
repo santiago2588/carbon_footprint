@@ -69,22 +69,22 @@ if file_upload is not None:
         df4.extend(co2)
         df5.extend(cost)
 
-    process_name=pd.DataFrame(process_list)
-    process_name.columns=['ID proceso']
-    equipment_name=pd.DataFrame(equipment_list)
-    equipment_name.columns=['ID equipo']
-    fuel_name=pd.DataFrame(df0)
-    fuel_name.columns=['Fuente energia']
-    emission_factor=pd.DataFrame(df1)
-    emission_factor.columns=['Factor de emision']
-    fuel_cost=pd.DataFrame(df3)
-    fuel_cost.columns=['Costo unitario']
-    co2=pd.DataFrame(df4)
-    co2.columns=['Emisiones kg CO2-eq']
-    scope=pd.DataFrame(df2)
-    scope.columns=['Alcance emisiones']
-    cost=pd.DataFrame(df5)
-    cost.columns=['Costo energia USD']
+        process_name=pd.DataFrame(process_list)
+        process_name.columns=['ID proceso']
+        equipment_name=pd.DataFrame(equipment_list)
+        equipment_name.columns=['ID equipo']
+        fuel_name=pd.DataFrame(df0)
+        fuel_name.columns=['Fuente energia']
+        emission_factor=pd.DataFrame(df1)
+        emission_factor.columns=['Factor de emision']
+        fuel_cost=pd.DataFrame(df3)
+        fuel_cost.columns=['Costo unitario']
+        co2=pd.DataFrame(df4)
+        co2.columns=['Emisiones kg CO2-eq']
+        scope=pd.DataFrame(df2)
+        scope.columns=['Alcance emisiones']
+        cost=pd.DataFrame(df5)
+        cost.columns=['Costo energia USD']
 
     with st.expander("Resultados"):
         results=pd.concat([process_name,equipment_name,fuel_name,emission_factor,fuel_cost,co2,scope,cost],axis='columns')
