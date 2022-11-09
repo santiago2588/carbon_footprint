@@ -49,24 +49,25 @@ if file_upload is not None:
     #Calculo de las emisiones de carbono
     @st.cache
     def emission(fuel,consumption):
-        for i,j in zip(fuel,consumption):
-            fuelname=df.loc[df["fuel_name"] == i,'fuel_name']
-            heatcontent = df.loc[df["fuel_name"]==i,'heat_content']
-            emissionfactor = df.loc[df["fuel_name"]==i,'emission_factor']
-            fuelcost = df.loc[df["fuel_name"]==i,'cost_per_unit']
-            scopeemission = df.loc[df["fuel_name"]==i,'scope']
-            co2emission=j*heatcontent*emissionfactor
-            costfuel=j*fuelcost
-            df0.extend(fuelname)
-            df1.extend(emissionfactor)
-            df2.extend(scopeemission)
-            df3.extend(fuelcost)
-            df4.extend(co2emission)
-            df5.extend(costfuel)
-        return co2emission
+        fuel_name=df.loc[df["fuel_name"] == i,'fuel_name']
+        heat_content = df.loc[df["fuel_name"]==i,'heat_content']
+        emission_factor = df.loc[df["fuel_name"]==i,'emission_factor']
+        fuel_cost = df.loc[df["fuel_name"]==i,'cost_per_unit']
+        scope = df.loc[df["fuel_name"]==i,'scope']
+        co2=j*heat_content*emission_factor
+        cost=j*fuel_cost
+        return fuel_name,heat_content,emission_factor,fuel_cost,scope,co2,cost
+
 
     #Prueba de la funcion
-    co2emission=emission(fuel_list,consumption_list)
+    for i,j in zip(fuel_list,consumption_list):
+        fuel_name,heat_content,emission_factor,fuel_cost,scope,co2,cost=emission(fuel_list,consumption_list)
+        df0.extend(fuel_name)
+        df1.extend(emission_factor)
+        df2.extend(scope)
+        df3.extend(fuel_cost)
+        df4.extend(co2)
+        df5.extend(cost)
 
     process_name=pd.DataFrame(process_list)
     process_name.columns=['ID proceso']
