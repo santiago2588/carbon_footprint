@@ -97,7 +97,7 @@ if file_upload is not None:
         col1,col2=st.columns(2)
 
         with col1:
-            st.metric('Total emisiones de carbono',str("%.1f" % emissions_total))+ ' kg CO2-eq')
+            st.metric('Total emisiones de carbono',str("%.1f" % np.float_(emissions_total))+ ' kg CO2-eq')
 
         with col2:
             st.metric('Costo total de energia',str("%.1f" % np.float_(cost_total))+ ' USD')
