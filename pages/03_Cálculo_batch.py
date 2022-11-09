@@ -47,7 +47,7 @@ if file_upload is not None:
     df5=[]
 
     #Calculo de las emisiones de carbono
-    @st.cache
+    st.cache
     def emission(fuel,consumption):
         fuel_name=df.loc[df["fuel_name"] == i,'fuel_name']
         heat_content = df.loc[df["fuel_name"]==i,'heat_content']
