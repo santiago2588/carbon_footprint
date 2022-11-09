@@ -47,13 +47,13 @@ if file_upload is not None:
     df5=[]
 
     #Calculo de las emisiones de carbono
-    @st.cache
+    #@st.cache
     def emission(fuel,consumption):
-        fuel_name=df.loc[df["fuel_name"] == fuel,'fuel_name']
-        heat_content = df.loc[df["fuel_name"]==fuel,'heat_content']
-        emission_factor = df.loc[df["fuel_name"]==fuel,'emission_factor']
-        fuel_cost = df.loc[df["fuel_name"]==fuel,'cost_per_unit']
-        scope = df.loc[df["fuel_name"]==fuel,'scope']
+        fuel_name=df.loc[df["fuel_name"] == i,'fuel_name']
+        heat_content = df.loc[df["fuel_name"]==i,'heat_content']
+        emission_factor = df.loc[df["fuel_name"]==i,'emission_factor']
+        fuel_cost = df.loc[df["fuel_name"]==i,'cost_per_unit']
+        scope = df.loc[df["fuel_name"]==i,'scope']
         co2=j*heat_content*emission_factor
         cost=j*fuel_cost
         return fuel_name,heat_content,emission_factor,fuel_cost,scope,co2,cost
