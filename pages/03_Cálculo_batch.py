@@ -87,7 +87,6 @@ if file_upload is not None:
     cost.columns=['Costo energia USD']
 
     with st.expander("Resultados"):
-
         results=pd.concat([process_name,equipment_name,fuel_name,emission_factor,fuel_cost,co2,scope,cost],axis='columns')
         #results.set_index('ID proceso',inplace=True)
 
@@ -102,7 +101,7 @@ if file_upload is not None:
     #     with col2:
     #         st.metric('Costo total de energia',str("%.1f" % np.float_(cost_total))+ ' USD')
     #
-    #     st.dataframe(results)
+        st.dataframe(results)
     #
     # with st.expander('Contribucion emisiones de carbono'):
     #
