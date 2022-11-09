@@ -90,62 +90,62 @@ if file_upload is not None:
         results=pd.concat([process_name,equipment_name,fuel_name,emission_factor,fuel_cost,co2,scope,cost],axis='columns')
         #results.set_index('ID proceso',inplace=True)
 
-         emissions_total=np.sum(results['Emisiones kg CO2-eq'])
-         cost_total=np.sum(results['Costo energia USD'])
+        emissions_total=np.sum(results['Emisiones kg CO2-eq'])
+        cost_total=np.sum(results['Costo energia USD'])
 
-         col1,col2=st.columns(2)
+        col1,col2=st.columns(2)
 
-         with col1:
-             st.metric('Total emisiones de carbono',str("%.1f" % np.float_(emissions_total))+ ' kg CO2-eq')
+        with col1:
+            st.metric('Total emisiones de carbono',str("%.1f" % np.float_(emissions_total))+ ' kg CO2-eq')
 
-         with col2:
-             st.metric('Costo total de energia',str("%.1f" % np.float_(cost_total))+ ' USD')
+        with col2:
+            st.metric('Costo total de energia',str("%.1f" % np.float_(cost_total))+ ' USD')
 
         st.dataframe(results)
 
-     with st.expander('Contribucion emisiones de carbono'):
+    with st.expander('Contribucion emisiones de carbono'):
 
-         tab1, tab2, tab3 = st.tabs(["Fuentes de energia", "Equipos", "Procesos"])
+        tab1, tab2, tab3 = st.tabs(["Fuentes de energia", "Equipos", "Procesos"])
 
-         with tab1:
-             fig_results = px.pie(results, names='Fuente energia', values='Emisiones kg CO2-eq', hole=0.4,hover_data=['Costo energia USD'])
-             st.plotly_chart(fig_results, use_container_width=True)
+        with tab1:
+            fig_results = px.pie(results, names='Fuente energia', values='Emisiones kg CO2-eq', hole=0.4,hover_data=['Costo energia USD'])
+            st.plotly_chart(fig_results, use_container_width=True)
 
-         with tab2:
-             fig_equipment = px.pie(results, names='ID equipo', values='Emisiones kg CO2-eq', hole=0.4, hover_data=['Costo energia USD'])
-             st.plotly_chart(fig_equipment, use_container_width=True)
+        with tab2:
+            fig_equipment = px.pie(results, names='ID equipo', values='Emisiones kg CO2-eq', hole=0.4, hover_data=['Costo energia USD'])
+            st.plotly_chart(fig_equipment, use_container_width=True)
 
-         with tab3:
-             fig_process = px.pie(results, names='ID proceso', values='Emisiones kg CO2-eq', hole=0.4, hover_data=['Costo energia USD'])
-             st.plotly_chart(fig_process, use_container_width=True)
+        with tab3:
+            fig_process = px.pie(results, names='ID proceso', values='Emisiones kg CO2-eq', hole=0.4, hover_data=['Costo energia USD'])
+            st.plotly_chart(fig_process, use_container_width=True)
 
-     with st.expander("Descubre cuánto podrías disminuir tus emisiones de carbono y tus costos de energía con AUCAF"):
+    with st.expander("Descubre cuánto podrías disminuir tus emisiones de carbono y tus costos de energía con AUCAF"):
 
-         co2_reduced=emissions_total*0.1
-         co2_new=emissions_total*0.9
+        co2_reduced=emissions_total*0.1
+        co2_new=emissions_total*0.9
 
-         #Se asume que un árbol almacena unos 167 kg de CO2 al año https://climate.selectra.com/es/actualidad/co2-arbol
-         arboles=co2_reduced/167
+        #Se asume que un árbol almacena unos 167 kg de CO2 al año https://climate.selectra.com/es/actualidad/co2-arbol
+        arboles=co2_reduced/167
 
-         col1,col2=st.columns(2)
+        col1,col2=st.columns(2)
 
-         with col1:
-             st.metric('Emisiones que se pueden reducir',str("%.1f" % np.float_(co2_reduced))+ ' kg CO2-eq')
+        with col1:
+            st.metric('Emisiones que se pueden reducir',str("%.1f" % np.float_(co2_reduced))+ ' kg CO2-eq')
 
-         with col2:
-             st.metric('Tus nuevas emisiones de carbono son',str("%.1f" % np.float_(co2_new))+ ' kg CO2-eq')
+        with col2:
+            st.metric('Tus nuevas emisiones de carbono son',str("%.1f" % np.float_(co2_new))+ ' kg CO2-eq')
 
-         st.write('Tu reduccion de emisiones equivalen a que siembres',str("%.1f" % np.float_(arboles))+ ' arboles 🌳')
+        st.write('Tu reduccion de emisiones equivalen a que siembres',str("%.1f" % np.float_(arboles))+ ' arboles 🌳')
 
-         cost_reduced=cost_total*0.1
-         cost_new=cost_total*0.9
+        cost_reduced=cost_total*0.1
+        cost_new=cost_total*0.9
 
-         col1,col2=st.columns(2)
+        col1,col2=st.columns(2)
 
-         with col1:
-             st.metric('Costos de energia que se pueden reducir',str("%.1f" % np.float_(cost_reduced))+ ' USD')
+        with col1:
+            st.metric('Costos de energia que se pueden reducir',str("%.1f" % np.float_(cost_reduced))+ ' USD')
 
-         with col2:
-             st.metric('Tus nuevos costos de energia son',str("%.1f" % np.float_(cost_new))+ ' USD')
+        with col2:
+            st.metric('Tus nuevos costos de energia son',str("%.1f" % np.float_(cost_new))+ ' USD')
 
-         st.success("Felicitaciones, has reducido tus emisiones de carbono y los costos energeticos y ahora tu planta es mas rentable y eficiente!")
+        st.success("Felicitaciones, has reducido tus emisiones de carbono y los costos energeticos y ahora tu planta es mas rentable y eficiente!")
