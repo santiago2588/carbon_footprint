@@ -108,15 +108,31 @@ if file_upload is not None:
         tab1, tab2, tab3 = st.tabs(["Fuentes de energia", "Equipos", "Procesos"])
 
         with tab1:
-            fig_results = px.pie(results, names='Fuente energia', values='Emisiones kg CO2-eq', hole=0.4,hover_data=['Costo energia USD'])
+            fig_results = px.pie(results, names='Fuente energia', values='Emisiones kg CO2-eq', hole=0.4)
             st.plotly_chart(fig_results, use_container_width=True)
 
         with tab2:
-            fig_equipment = px.pie(results, names='ID equipo', values='Emisiones kg CO2-eq', hole=0.4, hover_data=['Costo energia USD'])
+            fig_equipment = px.pie(results, names='ID equipo', values='Emisiones kg CO2-eq', hole=0.4)
             st.plotly_chart(fig_equipment, use_container_width=True)
 
         with tab3:
-            fig_process = px.pie(results, names='ID proceso', values='Emisiones kg CO2-eq', hole=0.4, hover_data=['Costo energia USD'])
+            fig_process = px.pie(results, names='ID proceso', values='Emisiones kg CO2-eq', hole=0.4)
+            st.plotly_chart(fig_process, use_container_width=True)
+
+    with st.expander('Contribucion costos de energia'):
+
+        tab1, tab2, tab3 = st.tabs(["Fuentes de energia", "Equipos", "Procesos"])
+
+        with tab1:
+            fig_results = px.pie(results, names='Fuente energia', values='Costo energia USD', hole=0.4)
+            st.plotly_chart(fig_results, use_container_width=True)
+
+        with tab2:
+            fig_equipment = px.pie(results, names='ID equipo', values='Costo energia USD', hole=0.4)
+            st.plotly_chart(fig_equipment, use_container_width=True)
+
+        with tab3:
+            fig_process = px.pie(results, names='ID proceso', values='Costo energia USD', hole=0.4)
             st.plotly_chart(fig_process, use_container_width=True)
 
     with st.expander("Descubre cuánto podrías disminuir tus emisiones de carbono y tus costos de energía con AUCAF"):
