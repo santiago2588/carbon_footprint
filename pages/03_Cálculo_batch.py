@@ -16,15 +16,18 @@ st.markdown(hide_menu_style, unsafe_allow_html=True)
 
 st.markdown("# Calculo batch")
 
-st.markdown("Carga el archivo CSV con los consumos de energia de las areas y equipos de tu planta")
-
 df=pd.read_csv("Databases/emission factors demo.csv")
 
-file_upload = st.file_uploader("Archivo", type=["csv"],accept_multiple_files=False)
+#st.markdown("Carga el archivo CSV con los consumos de energia de las areas y equipos de tu planta")
+#file_upload = st.file_uploader("Archivo", type=["csv"],accept_multiple_files=False)
+
+st.markdown("Carga el archivo Excel con los consumos de energia de las areas y equipos de tu planta")
+file_upload = st.file_uploader("Archivo", type=["xlsx"],accept_multiple_files=False)
 
 if file_upload is not None:
 
-    df_equip=pd.read_csv(file_upload)
+    #df_equip=pd.read_csv(file_upload)
+    df_equip=pd.read_excel(file_upload)
     df_equip=df_equip.sort_values('fuel_name')
 
     df_equip_mod=df_equip.rename(columns={'process_id':'ID proceso','equipment_id':'ID equipo','fuel_name':'Fuente energia','consumption':'Consumo','consumption_unit':'Unidad'})
