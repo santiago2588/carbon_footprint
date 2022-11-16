@@ -18,9 +18,11 @@ st.markdown("# Calculo batch")
 
 df=pd.read_csv("Databases/emission factors demo.csv")
 
+#Codigo para cargar archivo CSV
 #st.markdown("Carga el archivo CSV con los consumos de energia de las areas y equipos de tu planta")
 #file_upload = st.file_uploader("Archivo", type=["csv"],accept_multiple_files=False)
 
+#Codigo para cargar archivo Excel
 st.markdown("Carga el archivo Excel con los consumos de energia de las areas y equipos de tu planta")
 file_upload = st.file_uploader("Archivo", type=["xlsx"],accept_multiple_files=False)
 
