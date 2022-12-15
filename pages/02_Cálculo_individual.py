@@ -102,7 +102,7 @@ with st.expander('1. Selecciona las fuentes de energia que utilizas en tu planta
     emissions_total=np.sum(results['Emisiones kg CO2-eq'])
     cost_total=np.sum(results['Costo energia USD'])
 
-with st.expander('2. Calcula las emisiones de carbono de tu planta y los costos de energia'):
+with st.expander('2. Calcula las emisiones de carbono y los costos de energia de tu planta '):
 
     col1,col2=st.columns(2)
 
