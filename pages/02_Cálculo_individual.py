@@ -127,9 +127,11 @@ with st.expander('2. Calcula las emisiones de carbono y los costos de energia de
 
     st.dataframe(results)
 
-    fig_results = px.pie(results, names='Fuente energia', values='Emisiones kg CO2-eq',hole=0.4,hover_data=['Costo energia USD'],title='Contribución fuentes de energía')
-    #fig_results.update_traces()
-    st.plotly_chart(fig_results, use_container_width=True)
+    fig_results1 = px.pie(results, names='Fuente energia', values='Emisiones kg CO2-eq',hole=0.4,title='Contribución emisiones de carbono')
+    st.plotly_chart(fig_results1, use_container_width=True)
+
+    fig_results2 = px.pie(results, names='Fuente energia', values='Costo energia USD',hole=0.4,title='Contribución costos de energía')
+    st.plotly_chart(fig_results2, use_container_width=True)
 
 with st.expander("3. Descubre cuánto podrías disminuir tus emisiones de carbono y tus costos de energía con AUCAF"):
 
